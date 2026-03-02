@@ -34,6 +34,10 @@ layout/default_style="res://Test1.tres"
 glossary/default_case_sensitive=true
 variables={}
 
+[display]
+
+window/stretch/mode="viewport"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
@@ -81,4 +85,5 @@ sprint={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
