@@ -3,6 +3,22 @@
 [ext_resource type="Script" uid="uid://d6cs2t0y6qd1" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://bwk357d4dvxbx" path="res://sprites/MiniBGIJMCSprites-Sheet.png" id="2_4ojry"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_1p7wr"]
+atlas = ExtResource("2_4ojry")
+region = Rect2(0, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g8371"]
+atlas = ExtResource("2_4ojry")
+region = Rect2(576, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hn3bk"]
+atlas = ExtResource("2_4ojry")
+region = Rect2(384, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pj435"]
+atlas = ExtResource("2_4ojry")
+region = Rect2(192, 0, 48, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_tw1hs"]
 atlas = ExtResource("2_4ojry")
 region = Rect2(0, 0, 48, 32)
@@ -69,6 +85,38 @@ region = Rect2(336, 0, 48, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xj6nb"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1p7wr")
+}],
+"loop": true,
+"name": &"idle_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g8371")
+}],
+"loop": true,
+"name": &"idle_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hn3bk")
+}],
+"loop": true,
+"name": &"idle_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pj435")
+}],
+"loop": true,
+"name": &"idle_up",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_tw1hs")
@@ -145,6 +193,21 @@ size = Vector2(15, 16)
 offsets = PackedFloat32Array(0.2037037, 0.49382716, 0.72839504, 1)
 colors = PackedColorArray(0.8748165, 0.18153167, 0.4457419, 0.4745098, 0.9041749, 0.32086056, 0.5255512, 0.2901961, 0.9125899, 0.20017219, 0.4214779, 0.16862746, 1, 1, 1, 0)
 
+[sub_resource type="Animation" id="Animation_4ojry"]
+resource_name = "walk_down"
+
+[sub_resource type="Animation" id="Animation_tw1hs"]
+resource_name = "walk_up"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c06da"]
+_data = {
+&"walk_down": SubResource("Animation_4ojry"),
+&"walk_up": SubResource("Animation_tw1hs")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ojry"]
+size = Vector2(20, 23)
+
 [node name="Player" type="CharacterBody2D" unique_id=1939095047]
 z_index = 1
 script = ExtResource("1_g2els")
@@ -152,7 +215,7 @@ script = ExtResource("1_g2els")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=496465956]
 z_index = 1
 sprite_frames = SubResource("SpriteFrames_xj6nb")
-animation = &"walk_down"
+animation = &"idle_left"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1059970942]
 position = Vector2(0.5, 8)
@@ -177,3 +240,12 @@ hue_variation_min = 0.1
 hue_variation_max = 0.1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1609022855]
+libraries/ = SubResource("AnimationLibrary_c06da")
+
+[node name="InteractArea" type="Area2D" parent="." unique_id=207633748]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea" unique_id=859424688]
+position = Vector2(0, 8.5)
+shape = SubResource("RectangleShape2D_4ojry")
