@@ -146,6 +146,7 @@ offsets = PackedFloat32Array(0, 0.25308642, 0.50617284, 0.7962963)
 colors = PackedColorArray(1, 1, 1, 0, 0.72156864, 0.7294118, 0.7372549, 0.8352941, 0.5529412, 0.5647059, 0.57254905, 0.73333335, 0.49411765, 0.5058824, 0.5176471, 0.8509804)
 
 [node name="Player" type="CharacterBody2D" unique_id=1939095047]
+z_index = 1
 script = ExtResource("1_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=496465956]
@@ -160,16 +161,17 @@ shape = SubResource("RectangleShape2D_0e48y")
 [node name="SprintParticles" type="CPUParticles2D" parent="." unique_id=1828814638]
 z_index = -1
 position = Vector2(0, 3)
+emitting = false
 amount = 15
 lifetime = 0.3
 speed_scale = 0.6
 explosiveness = 0.48
 randomness = 0.11
 emission_shape = 1
-emission_sphere_radius = 1.5
+emission_sphere_radius = 1.0
 gravity = Vector2(0, 0)
-scale_amount_min = 0.5
-scale_amount_max = 0.5
+scale_amount_min = 0.2
+scale_amount_max = 0.4
 color = Color(0.60784316, 0.6313726, 0.6313726, 0.7764706)
 color_ramp = SubResource("Gradient_g2els")
 hue_variation_min = 0.1

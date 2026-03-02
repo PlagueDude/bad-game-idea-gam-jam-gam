@@ -36,6 +36,9 @@ variables={}
 
 [display]
 
+window/size/mode=2
+window/size/window_width_override=1152
+window/size/window_height_override=648
 window/stretch/mode="viewport"
 
 [editor_plugins]
