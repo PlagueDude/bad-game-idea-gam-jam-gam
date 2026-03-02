@@ -139,28 +139,27 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0e48y"]
-size = Vector2(2, 2)
+size = Vector2(15, 16)
 
 [sub_resource type="Gradient" id="Gradient_g2els"]
-offsets = PackedFloat32Array(0, 0.25308642, 0.50617284, 0.7962963)
-colors = PackedColorArray(1, 1, 1, 0, 0.72156864, 0.7294118, 0.7372549, 0.8352941, 0.5529412, 0.5647059, 0.57254905, 0.73333335, 0.49411765, 0.5058824, 0.5176471, 0.8509804)
+offsets = PackedFloat32Array(0.2037037, 0.49382716, 0.72839504, 1)
+colors = PackedColorArray(0.8748165, 0.18153167, 0.4457419, 0.4745098, 0.9041749, 0.32086056, 0.5255512, 0.2901961, 0.9125899, 0.20017219, 0.4214779, 0.16862746, 1, 1, 1, 0)
 
 [node name="Player" type="CharacterBody2D" unique_id=1939095047]
 z_index = 1
 script = ExtResource("1_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=496465956]
-scale = Vector2(0.2, 0.2)
+z_index = 1
 sprite_frames = SubResource("SpriteFrames_xj6nb")
 animation = &"walk_down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1059970942]
-position = Vector2(0, 2)
+position = Vector2(0.5, 8)
 shape = SubResource("RectangleShape2D_0e48y")
 
 [node name="SprintParticles" type="CPUParticles2D" parent="." unique_id=1828814638]
-z_index = -1
-position = Vector2(0, 3)
+position = Vector2(0, 15)
 emitting = false
 amount = 15
 lifetime = 0.3
@@ -168,10 +167,10 @@ speed_scale = 0.6
 explosiveness = 0.48
 randomness = 0.11
 emission_shape = 1
-emission_sphere_radius = 1.0
+emission_sphere_radius = 6.07
 gravity = Vector2(0, 0)
-scale_amount_min = 0.2
-scale_amount_max = 0.4
+scale_amount_min = 2.0
+scale_amount_max = 2.0
 color = Color(0.60784316, 0.6313726, 0.6313726, 0.7764706)
 color_ramp = SubResource("Gradient_g2els")
 hue_variation_min = 0.1

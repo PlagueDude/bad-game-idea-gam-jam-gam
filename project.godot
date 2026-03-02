@@ -13,6 +13,7 @@ config_version=5
 config/name="Bad Game Idea Gam Jam Gam"
 run/main_scene="uid://pwhvsos1cp7i"
 config/features=PackedStringArray("4.6", "Forward Plus")
+boot_splash/show_image=false
 config/icon="res://icon.svg"
 
 [autoload]
@@ -36,7 +37,6 @@ variables={}
 
 [display]
 
-window/size/mode=2
 window/size/window_width_override=1152
 window/size/window_height_override=648
 window/stretch/mode="viewport"
@@ -90,3 +90,4 @@ sprint={
 
 textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)
