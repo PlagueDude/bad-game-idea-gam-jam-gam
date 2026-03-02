@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://casj35xexy3ae"]
+
+[ext_resource type="Script" uid="uid://d6cs2t0y6qd1" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://crf6dtppbcbv4" path="res://icon.svg" id="2_qhqgy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0e48y"]
+
+[sub_resource type="Gradient" id="Gradient_g2els"]
+offsets = PackedFloat32Array(0, 0.41975307, 0.58641976, 0.7592592)
+colors = PackedColorArray(1, 1, 1, 0, 0.72156864, 0.7294118, 0.7372549, 0.8352941, 0.55120236, 0.56322557, 0.5712381, 1, 0.49411765, 0.5058824, 0.5176471, 1)
+
+[node name="Player" type="CharacterBody2D" unique_id=1939095047]
+script = ExtResource("1_g2els")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=530176904]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_qhqgy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1059970942]
+shape = SubResource("RectangleShape2D_0e48y")
+
+[node name="SprintParticiles" type="CPUParticles2D" parent="." unique_id=1828814638]
+z_index = -1
+position = Vector2(0, 8)
+amount = 15
+lifetime = 0.3
+speed_scale = 0.6
+explosiveness = 0.48
+randomness = 0.11
+emission_shape = 1
+emission_sphere_radius = 8.6
+gravity = Vector2(0, 0)
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+color = Color(0.60784316, 0.6313726, 0.6313726, 0.7764706)
+color_ramp = SubResource("Gradient_g2els")
+hue_variation_min = 0.1
+hue_variation_max = 0.1
