@@ -8,7 +8,7 @@ extends CharacterBody2D
 @export var sprint_unlocked = true
 
 @onready var sprint_particles = $SprintParticles
-@onready var anim = $AnimatedSprite2D
+@onready var anim = $AnimationPlayer
 @onready var interact_area = $InteractArea
 
 var can_move = true
@@ -57,9 +57,9 @@ func _physics_process(delta):
 	if direction != Vector2.ZERO:
 		if abs(direction.x) > abs(direction.y):
 			if direction.x > 0:
-				anim.play("walk_right")
-			else:
 				anim.play("walk_left")
+			else:
+				anim.play("walk_right")
 		else:
 			if direction.y > 0:
 				anim.play("walk_down")
@@ -77,19 +77,17 @@ func _physics_process(delta):
 	else:
 		sprint_particles.emitting = false
 
-
 func play_idle():
 	if abs(last_direction.x) > abs(last_direction.y):
 		if last_direction.x > 0:
-			anim.play("idle_right")
-		else:
 			anim.play("idle_left")
+		else:
+			anim.play("idle_right")
 	else:
 		if last_direction.y > 0:
 			anim.play("idle_down")
 		else:
 			anim.play("idle_up")
-
 
 func try_interact():
 	var areas = interact_area.get_overlapping_areas()
