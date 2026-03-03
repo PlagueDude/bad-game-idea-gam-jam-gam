@@ -27,7 +27,9 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "TestLine": "res://Timelines/TestDialog/TestLine.dtl",
-"TestLine2": "res://Timelines/TestDialog/TestLine2.dtl"
+"TestLine2": "res://Timelines/TestDialog/TestLine2.dtl",
+"TestLine3": "res://Timelines/TestDialog/TestLine3.dtl",
+"Testline4": "res://Timelines/TestDialog/Testline4.dtl"
 }
 layout/style_directory={
 "": "res://Timelines/Style1.tres",
@@ -53,6 +55,10 @@ window/stretch/mode="viewport"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
+
+[gui]
+
+theme/custom_font="uid://ce4ae7y525bvt"
 
 [input]
 

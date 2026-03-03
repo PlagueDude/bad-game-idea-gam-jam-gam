@@ -101,3 +101,11 @@ interact_bonus = "TestLine2"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2/Interaction" unique_id=500132546]
 position = Vector2(0, 9.5)
 shape = SubResource("RectangleShape2D_04qyp")
+
+[node name="Interaction2" parent="StaticBody2D2" unique_id=1686760165 instance=ExtResource("5_04qyp")]
+position = Vector2(-137, -3)
+interact_start = "TestLine3"
+interact_bonus = "Testline4"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2/Interaction2" unique_id=1885869140]
+shape = SubResource("RectangleShape2D_04qyp")
