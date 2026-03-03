@@ -1,0 +1,9 @@
+if {TestVars.Agree} == true:
+	My man!
+	[style name="StyleNar"]
+	*He appears to be waiting for some hand movement to be done. You do not do so*
+else:
+	[style name="Style2"]
+	[lspeed=.1]...Heathen.
+	[style name="StyleNar"]
+	*You think it best to flee*
