@@ -1,1 +1,8 @@
 This is a test of the timeline test system.
+It's a pretty neat system, what do you think?
+- Agree
+	set {TestVars.Agree} = true
+	Yeah!
+- Disagree
+	set {TestVars.Agree} = false
+	[lspeed=.1]Pft...Fine.

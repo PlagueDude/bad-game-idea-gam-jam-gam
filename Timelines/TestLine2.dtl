@@ -1,0 +1,4 @@
+if {TestVars.Agree} == true:
+	My man!
+else:
+	[lspeed=.1]...Heathen.

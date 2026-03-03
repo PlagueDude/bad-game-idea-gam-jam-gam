@@ -51,12 +51,6 @@ radius = 7.2111025
 
 [node name="Player" parent="." unique_id=1939095047 instance=ExtResource("1_4dvvg")]
 position = Vector2(25, 56)
-walk_speed = 60.0
-sprint_speed = 120.0
-acceleration = 3000.0
-friction = 4000.0
-gravity_strength = 400.0
-sprint_unlocked = true
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=707214528]
 position = Vector2(0, -1)
@@ -96,7 +90,8 @@ texture = ExtResource("4_4vge2")
 hframes = 10
 
 [node name="Interaction" parent="StaticBody2D2" unique_id=826853225 instance=ExtResource("5_04qyp")]
-timeline_name = "TestLine"
+interact_start = "TestLine"
+interact_bonus = "TestLine2"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2/Interaction" unique_id=500132546]
 position = Vector2(0, 8)

@@ -186,8 +186,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0e48y"]
-size = Vector2(15, 16)
+[sub_resource type="CircleShape2D" id="CircleShape2D_4ojry"]
+radius = 6.5
 
 [sub_resource type="Gradient" id="Gradient_g2els"]
 offsets = PackedFloat32Array(0.2037037, 0.49382716, 0.72839504, 1)
@@ -206,7 +206,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ojry"]
-size = Vector2(20, 23)
+size = Vector2(20, 21.25)
 
 [node name="Player" type="CharacterBody2D" unique_id=1939095047]
 z_index = 1
@@ -218,13 +218,13 @@ sprite_frames = SubResource("SpriteFrames_xj6nb")
 animation = &"idle_left"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1059970942]
-position = Vector2(0.5, 8)
-shape = SubResource("RectangleShape2D_0e48y")
+position = Vector2(0, 9)
+shape = SubResource("CircleShape2D_4ojry")
+debug_color = Color(0.5649939, 0.1972371, 0.14994043, 0.41960785)
 
 [node name="SprintParticles" type="CPUParticles2D" parent="." unique_id=1828814638]
 position = Vector2(0, 15)
 emitting = false
-amount = 15
 lifetime = 0.3
 speed_scale = 0.6
 explosiveness = 0.48
@@ -247,5 +247,5 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea" unique_id=859424688]
-position = Vector2(0, 8.5)
+position = Vector2(0, 7.375)
 shape = SubResource("RectangleShape2D_4ojry")

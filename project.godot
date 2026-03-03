@@ -26,7 +26,8 @@ directories/dch_directory={
 "unit_test_character": "res://Misc/Tests/Resources/unit_test_character.dch"
 }
 directories/dtl_directory={
-"TestLine": "res://Timelines/TestLine.dtl"
+"TestLine": "res://Timelines/TestLine.dtl",
+"TestLine2": "res://Timelines/TestLine2.dtl"
 }
 layout/style_directory={
 "": "res://Timelines/Style1.tres",
@@ -35,7 +36,11 @@ layout/style_directory={
 layout/style_list=["res://Timelines/Style1.tres"]
 layout/default_style="res://Timelines/Style1.tres"
 glossary/default_case_sensitive=true
-variables={}
+variables={
+"TestVars": {
+"Agree": false
+}
+}
 
 [display]
 

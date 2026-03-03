@@ -36,7 +36,10 @@ script = ExtResource("2_4k54k")
 scene = ExtResource("6_mc1xi")
 overrides = {
 "box_animation_in": "0",
-"box_animation_out": "0"
+"box_animation_out": "0",
+"typing_sounds_mode": "2",
+"typing_sounds_pitch_variance": "0.15",
+"typing_sounds_sounds_folder": "\"res://sounds/talk\""
 }
 
 [sub_resource type="Resource" id="Resource_bo5al"]
@@ -46,6 +49,10 @@ scene = ExtResource("6_edk2n")
 [sub_resource type="Resource" id="Resource_adk3j"]
 script = ExtResource("2_4k54k")
 scene = ExtResource("7_tlv0b")
+overrides = {
+"sounds_focus": "\"Talk3.wav\"",
+"sounds_hover": "\"res://sounds/talk/Talk3.wav\""
+}
 
 [sub_resource type="Resource" id="Resource_3njt3"]
 script = ExtResource("2_4k54k")
@@ -70,4 +77,4 @@ layer_info = {
 "16": SubResource("Resource_3njt3"),
 "17": SubResource("Resource_3xiah")
 }
-metadata/_latest_layer = "13"
+metadata/_latest_layer = "15"
