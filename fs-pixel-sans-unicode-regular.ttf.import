@@ -2,18 +2,18 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://ce4ae7y525bvt"
-path="res://.godot/imported/ConnectionIi-2wj8.otf-53a67f3df558c12b9bf79da79181e172.fontdata"
+uid="uid://djb12eavdvsh5"
+path="res://.godot/imported/fs-pixel-sans-unicode-regular.ttf-1f11e9f6d712ed01e15b247edb42cadb.fontdata"
 
 [deps]
 
-source_file="res://ConnectionIi-2wj8.otf"
-dest_files=["res://.godot/imported/ConnectionIi-2wj8.otf-53a67f3df558c12b9bf79da79181e172.fontdata"]
+source_file="res://fs-pixel-sans-unicode-regular.ttf"
+dest_files=["res://.godot/imported/fs-pixel-sans-unicode-regular.ttf-1f11e9f6d712ed01e15b247edb42cadb.fontdata"]
 
 [params]
 
 Rendering=null
-antialiasing=1
+antialiasing=0
 generate_mipmaps=false
 disable_embedded_bitmaps=true
 multichannel_signed_distance_field=false
@@ -30,7 +30,12 @@ Fallbacks=null
 fallbacks=[]
 Compress=null
 compress=true
-preload=[]
+preload=[{
+"chars": [],
+"glyphs": [],
+"name": "New Configuration",
+"size": Vector2i(16, 0)
+}]
 language_support={}
 script_support={}
 opentype_features={}

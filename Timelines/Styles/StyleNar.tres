@@ -18,7 +18,7 @@ scene = ExtResource("1_n6rw3")
 overrides = {
 "global_bg_color": "Color(0.02734375, 0.0025634766, 0.013598442, 1)",
 "global_font_color": "Color(0.9375, 0.5126953, 0.55252075, 1)",
-"global_font_size": "32.0"
+"global_font_size": "48.0"
 }
 
 [sub_resource type="Resource" id="Resource_ngghd"]
