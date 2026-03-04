@@ -5,7 +5,6 @@ extends CharacterBody2D
 @export var acceleration = 3000.0
 @export var friction = 4000.0
 @export var gravity_strength = 400.0
-@export var sprint_unlocked = true
 
 @onready var sprint_particles = $SprintParticles
 @onready var anim = $AnimationPlayer
@@ -39,7 +38,7 @@ func _physics_process(delta):
 		direction = direction.normalized()
 		last_direction = direction
 	
-	var sprinting = sprint_unlocked and Input.is_action_pressed("sprint")
+	var sprinting = Gamemanager.sprint_unlocked and Input.is_action_pressed("sprint")
 	var current_speed = sprint_speed if sprinting else walk_speed
 	
 	var target_velocity = direction * current_speed

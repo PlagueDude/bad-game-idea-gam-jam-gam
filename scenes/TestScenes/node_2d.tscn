@@ -123,6 +123,7 @@ shape = SubResource("RectangleShape2D_04qyp")
 position = Vector2(-40, 45)
 interact_start = "TestLine3"
 interact_bonus = "Testline4"
+unlock_sprint = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction2" unique_id=1885869140]
 shape = SubResource("RectangleShape2D_04qyp")
@@ -142,6 +143,7 @@ shape = SubResource("RectangleShape2D_j7wrs")
 
 [node name="Interaction3" parent="InTuuube" unique_id=203608530 instance=ExtResource("4_iiumy")]
 interact_start = "TestLine5"
+lock_sprint = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InTuuube/Interaction3" unique_id=1002733825]
 position = Vector2(-0.5, 2)
