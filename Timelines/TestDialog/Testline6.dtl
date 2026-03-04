@@ -1,0 +1,4 @@
+if {TestVars.Agree} == true:
+	MY MAN!
+else:
+	CringedPill...

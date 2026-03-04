@@ -43,6 +43,7 @@ overrides = {
 "box_size": "Vector2(768, 150)",
 "next_indicator_size": "Vector2(32, 32)",
 "next_indicator_texture": "\"res://sprites/indicator3.png\"",
+"typing_sounds_pitch": "0.9",
 "typing_sounds_pitch_variance": "0.15",
 "typing_sounds_sounds_folder": "\"res://sounds/talk3\""
 }

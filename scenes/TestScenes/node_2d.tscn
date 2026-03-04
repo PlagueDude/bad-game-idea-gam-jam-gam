@@ -6,8 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://dxlkccuwsga10" path="res://scenes/interaction.tscn" id="4_iiumy"]
 [ext_resource type="Texture2D" uid="uid://bpgrjmalvtblj" path="res://sprites/BGIGJamMediumBoy-Sheet.png" id="5_6q20d"]
 [ext_resource type="AudioStream" uid="uid://dn130tqh3av8r" path="res://sounds/564436__fester993__forest-ambience-1.wav" id="6_fbjkl"]
+[ext_resource type="PackedScene" uid="uid://d6y7t7y7id7y" path="res://scenes/transition_manager.tscn" id="7_h4jw1"]
+[ext_resource type="PackedScene" uid="uid://bicjnxecdvj2b" path="res://scenes/transition.tscn" id="8_iiumy"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4vge2"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h4jw1"]
 texture = ExtResource("2_fbjkl")
 1:0/0 = 0
 3:0/0 = 0
@@ -68,7 +70,7 @@ texture = ExtResource("2_fbjkl")
 
 [sub_resource type="TileSet" id="TileSet_04qyp"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_4vge2")
+sources/0 = SubResource("TileSetAtlasSource_h4jw1")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4vge2"]
 radius = 7.2111025
@@ -81,6 +83,8 @@ size = Vector2(20, 39)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fws66"]
 size = Vector2(23, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6q20d"]
 
 [node name="Node2D" type="Node2D" unique_id=431440087]
 
@@ -151,5 +155,14 @@ shape = SubResource("RectangleShape2D_fws66")
 
 [node name="BGSounds" type="AudioStreamPlayer2D" parent="." unique_id=2011239571]
 stream = ExtResource("6_fbjkl")
-volume_db = 5.887
+volume_db = -0.5
 autoplay = true
+
+[node name="TransitionManager" parent="." unique_id=349036979 instance=ExtResource("7_h4jw1")]
+
+[node name="Transition" parent="." unique_id=1269792738 instance=ExtResource("8_iiumy")]
+position = Vector2(57, -23)
+next_scene = "res://scenes/TestScenes/test_2.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Transition" unique_id=195125899]
+shape = SubResource("RectangleShape2D_6q20d")

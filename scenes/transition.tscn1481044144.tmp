@@ -5,3 +5,4 @@
 [node name="Transition" type="Area2D" unique_id=1269792738]
 z_index = 1
 script = ExtResource("1_rerct")
+next_scene = null

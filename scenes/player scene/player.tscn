@@ -285,7 +285,7 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ojry"]
 size = Vector2(12, 16)
 
-[node name="Player" type="CharacterBody2D" unique_id=1939095047]
+[node name="Player" type="CharacterBody2D" unique_id=1939095047 groups=["Player"]]
 z_index = 1
 script = ExtResource("1_g2els")
 
@@ -294,7 +294,7 @@ z_index = 1
 texture = ExtResource("2_4ojry")
 hframes = 16
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1059970942]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1059970942 groups=["Player"]]
 position = Vector2(0, 9)
 shape = SubResource("CircleShape2D_4ojry")
 debug_color = Color(0.5649939, 0.1972371, 0.14994043, 0.41960785)

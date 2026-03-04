@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://d6y7t7y7id7y"]
+
+[ext_resource type="Script" uid="uid://bhslislk2aj2c" path="res://scripts/TransitionManager.gd" id="1_nk83w"]
+
+[node name="TransitionManager" type="CanvasLayer" unique_id=349036979]
+script = ExtResource("1_nk83w")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2079852639]
+offset_left = -211.0
+offset_top = -93.0
+offset_right = 345.0
+offset_bottom = 224.0
+color = Color(0, 0, 0, 0)
