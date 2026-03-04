@@ -40,6 +40,8 @@ overrides = {
 "box_animation_in": "0",
 "box_animation_out": "0",
 "box_size": "Vector2(768, 150)",
+"next_indicator_size": "Vector2(32, 32)",
+"next_indicator_texture": "\"res://sprites/indicator.png\"",
 "typing_sounds_mode": "2",
 "typing_sounds_pitch": "0.5",
 "typing_sounds_pitch_variance": "0.2",
@@ -83,4 +85,4 @@ layer_info = {
 "16": SubResource("Resource_uua27"),
 "17": SubResource("Resource_s2oxm")
 }
-metadata/_latest_layer = "15"
+metadata/_latest_layer = "13"
