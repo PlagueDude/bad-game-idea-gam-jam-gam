@@ -13,3 +13,5 @@ func interact():
 	else:
 		if interact_bonus != "":
 			Dialogic.start(interact_bonus)
+		elif interact_start != "":
+			Dialogic.start(interact_start)

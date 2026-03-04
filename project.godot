@@ -14,6 +14,7 @@ config/name="Bad Game Idea Gam Jam Gam"
 run/main_scene="uid://pwhvsos1cp7i"
 config/features=PackedStringArray("4.6", "Forward Plus")
 boot_splash/show_image=false
+boot_splash/use_filter=false
 config/icon="res://icon.svg"
 
 [autoload]
@@ -29,6 +30,7 @@ directories/dtl_directory={
 "TestLine": "res://Timelines/TestDialog/TestLine.dtl",
 "TestLine2": "res://Timelines/TestDialog/TestLine2.dtl",
 "TestLine3": "res://Timelines/TestDialog/TestLine3.dtl",
+"TestLine5": "res://Timelines/TestDialog/TestLine5.dtl",
 "Testline4": "res://Timelines/TestDialog/Testline4.dtl"
 }
 layout/style_directory={
