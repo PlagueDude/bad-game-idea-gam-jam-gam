@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dhu2os2g13bk7" path="res://sprites/BGIGJamNPCSprites-Sheet.png" id="3_h4jw1"]
 [ext_resource type="PackedScene" uid="uid://dxlkccuwsga10" path="res://scenes/interaction.tscn" id="4_iiumy"]
 [ext_resource type="Texture2D" uid="uid://bpgrjmalvtblj" path="res://sprites/BGIGJamMediumBoy-Sheet.png" id="5_6q20d"]
+[ext_resource type="AudioStream" uid="uid://dn130tqh3av8r" path="res://sounds/564436__fester993__forest-ambience-1.wav" id="6_fbjkl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4vge2"]
 texture = ExtResource("2_fbjkl")
@@ -145,3 +146,8 @@ interact_start = "TestLine5"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InTuuube/Interaction3" unique_id=1002733825]
 position = Vector2(-0.5, 2)
 shape = SubResource("RectangleShape2D_fws66")
+
+[node name="BGSounds" type="AudioStreamPlayer2D" parent="." unique_id=2011239571]
+stream = ExtResource("6_fbjkl")
+volume_db = 5.887
+autoplay = true
