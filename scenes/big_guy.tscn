@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dptq56glxurkq" path="res://sprites/BGIGJamBigBoy.png" id="1_8haek"]
 [ext_resource type="Texture2D" uid="uid://c30exncxrlqx8" path="res://sprites/BEAM.png" id="2_7254q"]
+[ext_resource type="Script" uid="uid://ghduxa0hwrf5" path="res://scripts/eyebeam.gd" id="2_ibv7h"]
 
 [node name="BigGuy" type="CharacterBody2D" unique_id=1943523584]
 z_index = -1
@@ -9,14 +10,35 @@ z_index = -1
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=924209455]
 texture = ExtResource("1_8haek")
 
-[node name="eyebeam" type="RayCast2D" parent="." unique_id=1565175077]
-position = Vector2(-17, 18)
-target_position = Vector2(-1, 85)
+[node name="Eyebeam" type="Node2D" parent="." unique_id=1354052992]
+script = ExtResource("2_ibv7h")
 
-[node name="PointLight2D" type="PointLight2D" parent="eyebeam" unique_id=1384956794]
-position = Vector2(0, 58)
-scale = Vector2(1, 2.625)
-color = Color(1, 0.5764706, 1, 1)
+[node name="PointLight2D" type="PointLight2D" parent="Eyebeam" unique_id=1384956794]
+position = Vector2(-17, 58.250004)
+scale = Vector2(1, 1.7812499)
+color = Color(0.99999994, 0.60085416, 0.99989945, 1)
 energy = 5.0
+blend_mode = 2
 shadow_enabled = true
 texture = ExtResource("2_7254q")
+
+[node name="RayCast2D" type="RayCast2D" parent="Eyebeam" unique_id=1732076921]
+z_index = 1
+position = Vector2(-16, 21)
+target_position = Vector2(0, 82)
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="RayCast2D2" type="RayCast2D" parent="Eyebeam" unique_id=1471101593]
+z_index = 1
+position = Vector2(-15, 22)
+target_position = Vector2(12, 78)
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="RayCast2D3" type="RayCast2D" parent="Eyebeam" unique_id=771330604]
+z_index = 1
+position = Vector2(-17, 22)
+target_position = Vector2(-13, 78)
+collide_with_areas = true
+collide_with_bodies = false

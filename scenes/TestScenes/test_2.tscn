@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dxlkccuwsga10" path="res://scenes/interaction.tscn" id="4_h7sbw"]
 [ext_resource type="PackedScene" uid="uid://cm2tisy1wdrs0" path="res://scenes/big_guy.tscn" id="5_h7sbw"]
 [ext_resource type="Script" uid="uid://bkjlckxcaj45y" path="res://scripts/path_follow_2d.gd" id="5_uq2r2"]
+[ext_resource type="PackedScene" uid="uid://boi0wnn3kxyrf" path="res://scenes/box.tscn" id="7_2vrk6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h5at3"]
 texture = ExtResource("1_3y0n8")
@@ -79,9 +80,9 @@ size = Vector2(14, 13)
 
 [sub_resource type="Curve2D" id="Curve2D_uq2r2"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 191, -24, 0, 0, 0, 0, 159, -16, 0, 0, 0, 0, 89, -20, 0, 0, 0, 0, 22, -12, 0, 0, 0, 0, -29, -21, 0, 0, 0, 0, -83, -9, 0, 0, 0, 0, -128, -19, 0, 0, 0, 0, -165, -13, 0, 0, 0, 0, -205, -24, 0, 0, 0, 0, -214, -12, 0, 0, 0, 0, -247, -19, 0, 0, 0, 0, -275, -11, 0, 0, 0, 0, -313, -15, 0, 0, 0, 0, -305, -19, 0, 0, 0, 0, -295, -20, 0, 0, 0, 0, -276, -21, 0, 0, 0, 0, -261, -13, 0, 0, 0, 0, -238, -9, 0, 0, 0, 0, -206, -16, 0, 0, 0, 0, -178, -20, 0, 0, 0, 0, -148, -13, 0, 0, 0, 0, -117, -8, 0, 0, 0, 0, -75, -14, 0, 0, 0, 0, -38, -3, 0, 0, 0, 0, 36, -21, 0, 0, 0, 0, 69, -11, 0, 0, 0, 0, 139, -15, 0, 0, 0, 0, 153, -10, 0, 0, 0, 0, 191, -17, 0, 0, 0, 0, 191, -23)
+"points": PackedVector2Array(0, 0, 0, 0, 167, -27, 0, 0, 0, 0, 99, -33, 0, 0, 0, 0, 79, -32, 0, 0, 0, 0, -91, -29, 0, 0, 0, 0, -142, -34, 0, 0, 0, 0, -223, -33, 0, 0, 0, 0, -311, -28, 0, 0, 0, 0, -217, -31, 0, 0, 0, 0, -94, -32, 0, 0, 0, 0, -14, -31, 0, 0, 0, 0, 165, -33, 0, 0, 0, 0, 167, -28)
 }
-point_count = 30
+point_count = 12
 
 [node name="Test2" type="Node2D" unique_id=1818987453]
 position = Vector2(0, 48)
@@ -128,10 +129,28 @@ shape = SubResource("RectangleShape2D_2vrk6")
 curve = SubResource("Curve2D_uq2r2")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Sentinel_Track/Path2D" unique_id=67394026]
-position = Vector2(191, -24)
+position = Vector2(167, -27)
 rotation = 0.006262966
 rotates = false
 script = ExtResource("5_uq2r2")
 
 [node name="BigGuy" parent="Sentinel_Track/Path2D/PathFollow2D" unique_id=1943523584 instance=ExtResource("5_h7sbw")]
-position = Vector2(-2.1878529, -29.986885)
+position = Vector2(-30.274975, -43.81125)
+
+[node name="Box" parent="Sentinel_Track" unique_id=2090417448 instance=ExtResource("7_2vrk6")]
+light_mask = 1
+position = Vector2(168, 10)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=118191897]
+color = Color(0.5649617, 0.5649616, 0.5649616, 1)
+
+[node name="Box" parent="." unique_id=2056837884 instance=ExtResource("7_2vrk6")]
+light_mask = 1
+position = Vector2(27, 7)
+
+[node name="FadeRect" type="ColorRect" parent="." unique_id=217257020]
+offset_left = -341.0
+offset_top = -93.0
+offset_right = 345.0
+offset_bottom = 224.0
+color = Color(0, 0, 0, 0)
