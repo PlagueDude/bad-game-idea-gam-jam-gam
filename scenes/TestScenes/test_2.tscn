@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cm2tisy1wdrs0" path="res://scenes/big_guy.tscn" id="5_h7sbw"]
 [ext_resource type="Script" uid="uid://bkjlckxcaj45y" path="res://scripts/path_follow_2d.gd" id="5_uq2r2"]
 [ext_resource type="PackedScene" uid="uid://boi0wnn3kxyrf" path="res://scenes/box.tscn" id="7_2vrk6"]
+[ext_resource type="PackedScene" uid="uid://c42s45dj0qsel" path="res://scenes/crt_effect.tscn" id="8_gfmv4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h5at3"]
 texture = ExtResource("1_3y0n8")
@@ -97,7 +98,7 @@ position = Vector2(179, 1)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=870432952]
 position = Vector2(0, -1)
-zoom = Vector2(5, 5)
+zoom = Vector2(6, 6)
 limit_left = -321
 limit_top = -16
 limit_right = 193
@@ -154,3 +155,5 @@ offset_top = -93.0
 offset_right = 345.0
 offset_bottom = 224.0
 color = Color(0, 0, 0, 0)
+
+[node name="CRT Effect" parent="." unique_id=643495953 instance=ExtResource("8_gfmv4")]

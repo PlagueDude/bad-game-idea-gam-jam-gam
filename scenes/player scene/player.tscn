@@ -286,7 +286,7 @@ _data = {
 size = Vector2(12, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tw1hs"]
-size = Vector2(12, 17)
+size = Vector2(10, 14)
 
 [node name="Player" type="CharacterBody2D" unique_id=1939095047 groups=["Player"]]
 z_index = 1
@@ -333,6 +333,6 @@ shape = SubResource("RectangleShape2D_4ojry")
 [node name="hitbox" type="Area2D" parent="." unique_id=1519902537 groups=["Player"]]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="hitbox" unique_id=1569436968]
-position = Vector2(0, 7.5)
+position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_tw1hs")
 debug_color = Color(0.5305189, 0.54085934, 0.51354235, 0.41960785)

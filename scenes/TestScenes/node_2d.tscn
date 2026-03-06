@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://dn130tqh3av8r" path="res://sounds/564436__fester993__forest-ambience-1.wav" id="6_fbjkl"]
 [ext_resource type="PackedScene" uid="uid://d6y7t7y7id7y" path="res://scenes/transition_manager.tscn" id="7_h4jw1"]
 [ext_resource type="PackedScene" uid="uid://bicjnxecdvj2b" path="res://scenes/transition.tscn" id="8_iiumy"]
+[ext_resource type="PackedScene" uid="uid://c42s45dj0qsel" path="res://scenes/crt_effect.tscn" id="9_6q20d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h4jw1"]
 texture = ExtResource("2_fbjkl")
@@ -93,7 +94,7 @@ position = Vector2(25, 56)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=707214528]
 position = Vector2(0, -1)
-zoom = Vector2(5, 5)
+zoom = Vector2(6, 6)
 limit_left = -64
 limit_top = -16
 limit_right = 200
@@ -166,3 +167,5 @@ next_scene = "res://scenes/TestScenes/test_2.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Transition" unique_id=195125899]
 shape = SubResource("RectangleShape2D_6q20d")
+
+[node name="CRT Effect" parent="." unique_id=643495953 instance=ExtResource("9_6q20d")]

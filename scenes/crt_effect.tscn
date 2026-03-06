@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://c42s45dj0qsel"]
+
+[ext_resource type="Shader" uid="uid://ii4cqbeugvte" path="res://shader/screen_effect.gdshader" id="1_y0u3h"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hjooy"]
+shader = ExtResource("1_y0u3h")
+
+[sub_resource type="QuadMesh" id="QuadMesh_3wrqn"]
+custom_aabb = AABB(640, 0, 0, 0, 0, 0)
+size = Vector2(1280, 720)
+center_offset = Vector3(640, 360, 0)
+
+[node name="CRT Effect" type="CanvasLayer" unique_id=643495953]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=803610101]
+material = SubResource("ShaderMaterial_hjooy")
+mesh = SubResource("QuadMesh_3wrqn")
