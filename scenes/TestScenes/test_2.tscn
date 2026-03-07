@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://boi0wnn3kxyrf" path="res://scenes/box.tscn" id="7_2vrk6"]
 [ext_resource type="PackedScene" uid="uid://c42s45dj0qsel" path="res://scenes/crt_effect.tscn" id="8_gfmv4"]
 [ext_resource type="PackedScene" uid="uid://bicjnxecdvj2b" path="res://scenes/transition.tscn" id="9_qu1a5"]
-[ext_resource type="AudioStream" uid="uid://l1qrvhhh2nue" path="res://sounds/ふわり、雲を眺めて。.mp3" id="10_l46in"]
+[ext_resource type="AudioStream" uid="uid://bsxik43kp1jff" path="res://sounds/ふわり、雲を眺めて。.ogg" id="10_l46in"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h5at3"]
 texture = ExtResource("1_3y0n8")
