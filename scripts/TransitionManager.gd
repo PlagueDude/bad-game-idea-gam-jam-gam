@@ -14,6 +14,7 @@ func _ready():
 func fade_to_scene(scene_path : String) -> void:
 	if is_transitioning:
 		return
+	AudioController.play_OpenDoor()
 	is_transitioning = true
 	await _fade_out()
 	get_tree().change_scene_to_file(scene_path)

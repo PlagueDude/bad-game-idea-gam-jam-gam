@@ -8,6 +8,8 @@
 [ext_resource type="Script" uid="uid://bkjlckxcaj45y" path="res://scripts/path_follow_2d.gd" id="5_uq2r2"]
 [ext_resource type="PackedScene" uid="uid://boi0wnn3kxyrf" path="res://scenes/box.tscn" id="7_2vrk6"]
 [ext_resource type="PackedScene" uid="uid://c42s45dj0qsel" path="res://scenes/crt_effect.tscn" id="8_gfmv4"]
+[ext_resource type="PackedScene" uid="uid://bicjnxecdvj2b" path="res://scenes/transition.tscn" id="9_qu1a5"]
+[ext_resource type="AudioStream" uid="uid://l1qrvhhh2nue" path="res://sounds/ふわり、雲を眺めて。.mp3" id="10_l46in"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h5at3"]
 texture = ExtResource("1_3y0n8")
@@ -85,6 +87,9 @@ _data = {
 }
 point_count = 12
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l46in"]
+size = Vector2(20, 6)
+
 [node name="Test2" type="Node2D" unique_id=1818987453]
 position = Vector2(0, 48)
 
@@ -157,3 +162,12 @@ offset_bottom = 224.0
 color = Color(0, 0, 0, 0)
 
 [node name="CRT Effect" parent="." unique_id=643495953 instance=ExtResource("8_gfmv4")]
+
+[node name="Transition" parent="." unique_id=1269792738 instance=ExtResource("9_qu1a5")]
+position = Vector2(161, 25)
+next_scene = "res://scenes/TestScenes/node_2d.tscn"
+new_music = ExtResource("10_l46in")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Transition" unique_id=1245544141]
+position = Vector2(7, 7)
+shape = SubResource("RectangleShape2D_l46in")

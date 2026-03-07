@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dptq56glxurkq" path="res://sprites/BGIGJamBigBoy.png" id="1_8haek"]
 [ext_resource type="Texture2D" uid="uid://c30exncxrlqx8" path="res://sprites/BEAM.png" id="2_7254q"]
 [ext_resource type="Script" uid="uid://ghduxa0hwrf5" path="res://scripts/eyebeam.gd" id="2_ibv7h"]
+[ext_resource type="AudioStream" uid="uid://cr3ug15fycur7" path="res://sounds/SFX/Eyebeam.wav" id="4_1gauc"]
 
 [node name="BigGuy" type="CharacterBody2D" unique_id=1943523584]
 z_index = -1
@@ -42,3 +43,11 @@ position = Vector2(-17, 22)
 target_position = Vector2(-13, 78)
 collide_with_areas = true
 collide_with_bodies = false
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Eyebeam" unique_id=1740030849]
+stream = ExtResource("4_1gauc")
+volume_db = -8.831
+pitch_scale = 0.97
+autoplay = true
+max_distance = 913.0
+panning_strength = 2.08
