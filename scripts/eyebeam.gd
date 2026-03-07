@@ -22,6 +22,7 @@ func _physics_process(_delta):
 				break
 
 func _fade_and_reload() -> void:
+	Dialogic.end_timeline()
 	await TransitionManager._fade_out()
 	get_tree().reload_current_scene()
 	await TransitionManager._fade_in()
