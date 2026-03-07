@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://btkaos00qec0e" path="res://scripts/audio_controller.gd" id="1_cedxo"]
 [ext_resource type="AudioStream" uid="uid://droe4ypaor4ss" path="res://sounds/SFX/15419__pagancow__dorm-door-opening.ogg" id="3_6fhfa"]
 [ext_resource type="AudioStream" uid="uid://dxur7if0152xa" path="res://sounds/SFX/PushBox.wav" id="4_6fhfa"]
+[ext_resource type="AudioStream" uid="uid://coe1qj3ungmcm" path="res://sounds/SFX/GotCaughtBetter.ogg" id="5_vj1x0"]
 
 [node name="AudioController" type="Node2D" unique_id=671241188]
 script = ExtResource("1_cedxo")
@@ -19,3 +20,8 @@ volume_db = -1.0
 
 [node name="PushBlock" type="AudioStreamPlayer" parent="." unique_id=1791982432]
 stream = ExtResource("4_6fhfa")
+
+[node name="GotCaught" type="AudioStreamPlayer" parent="." unique_id=288784386]
+stream = ExtResource("5_vj1x0")
+volume_db = -5.0
+pitch_scale = 0.8

@@ -23,3 +23,6 @@ func play_OpenDoor():
 
 func play_PushBlock():
 	$PushBlock.play()
+
+func play_GotCaught():
+	$GotCaught.play()
