@@ -120,7 +120,7 @@ shape = SubResource("CircleShape2D_uq2r2")
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2" unique_id=1160906622]
 texture = ExtResource("3_g8vyj")
 hframes = 10
-frame = 1
+frame = 8
 
 [node name="Interaction" parent="StaticBody2D2" unique_id=826853225 instance=ExtResource("4_h7sbw")]
 interact_start = "Testline6"
