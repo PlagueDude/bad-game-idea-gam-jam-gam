@@ -36,3 +36,10 @@ func _fade_in() -> void:
 		fade_rect.color.a = i / float(steps)
 		await get_tree().create_timer(step_time).timeout
 	fade_rect.color.a = 0
+	
+func exit():
+	if is_transitioning:
+		return
+	AudioController.play_OpenDoor()
+	is_transitioning = true
+	await _fade_out()

@@ -22,7 +22,7 @@ func _start_transition() -> void:
 		AudioController.change_music(new_music)
 
 	if exit_game:
-		await TransitionManager.fade_to_scene("")
+		await TransitionManager.exit()
 		get_tree().quit()
 	else:
 		await TransitionManager.fade_to_scene(next_scene)
