@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ca2qhyf7exc4x"]
 
-[ext_resource type="AudioStream" uid="uid://dn130tqh3av8r" path="res://sounds/564436__fester993__forest-ambience-1.wav" id="1_41o6r"]
 [ext_resource type="Script" uid="uid://btkaos00qec0e" path="res://scripts/audio_controller.gd" id="1_cedxo"]
+[ext_resource type="AudioStream" uid="uid://cvnoe31vyx5hx" path="res://sounds/Song2.6.wav" id="2_vj1x0"]
 [ext_resource type="AudioStream" uid="uid://droe4ypaor4ss" path="res://sounds/SFX/15419__pagancow__dorm-door-opening.ogg" id="3_6fhfa"]
 [ext_resource type="AudioStream" uid="uid://dxur7if0152xa" path="res://sounds/SFX/PushBox.wav" id="4_6fhfa"]
 [ext_resource type="AudioStream" uid="uid://coe1qj3ungmcm" path="res://sounds/SFX/GotCaughtBetter.ogg" id="5_vj1x0"]
@@ -10,7 +10,7 @@
 script = ExtResource("1_cedxo")
 
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=1824087122]
-stream = ExtResource("1_41o6r")
+stream = ExtResource("2_vj1x0")
 volume_db = -10.0
 autoplay = true
 

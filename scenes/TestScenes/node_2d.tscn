@@ -168,3 +168,12 @@ mute_music = true
 shape = SubResource("RectangleShape2D_6q20d")
 
 [node name="CRT Effect" parent="." unique_id=643495953 instance=ExtResource("9_6q20d")]
+
+[node name="Transition2" parent="." unique_id=891445981 instance=ExtResource("8_iiumy")]
+position = Vector2(154, 121)
+mute_music = true
+exit_game = true
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Transition2" unique_id=543827470]
+shape = SubResource("RectangleShape2D_6q20d")

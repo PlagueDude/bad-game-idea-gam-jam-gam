@@ -3,6 +3,7 @@ extends Area2D
 @export var next_scene : String
 @export var mute_music : bool = false
 @export var new_music : AudioStream
+@export var exit_game : bool = false
 
 
 func _ready():
@@ -19,4 +20,9 @@ func _start_transition() -> void:
 	AudioController.set_mute(mute_music)
 	if new_music != null:
 		AudioController.change_music(new_music)
-	await TransitionManager.fade_to_scene(next_scene)
+
+	if exit_game:
+		await TransitionManager.fade_to_scene("")
+		get_tree().quit()
+	else:
+		await TransitionManager.fade_to_scene(next_scene)
