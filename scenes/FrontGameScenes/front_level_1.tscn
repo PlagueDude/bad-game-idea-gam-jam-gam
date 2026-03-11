@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bc4qf8dnd6116"]
+
+[ext_resource type="PackedScene" uid="uid://casj35xexy3ae" path="res://scenes/player scene/player.tscn" id="1_p04mw"]
+[ext_resource type="PackedScene" uid="uid://c42s45dj0qsel" path="res://scenes/crt_effect.tscn" id="2_pjuxn"]
+[ext_resource type="PackedScene" uid="uid://d6y7t7y7id7y" path="res://scenes/transition_manager.tscn" id="3_coc5t"]
+
+[node name="FrontLevel1" type="Node2D" unique_id=1226015992]
+
+[node name="Player" parent="." unique_id=1939095047 instance=ExtResource("1_p04mw")]
+position = Vector2(25, 56)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=2062838835]
+position = Vector2(0, -1)
+zoom = Vector2(6, 6)
+limit_left = -64
+limit_top = -16
+limit_right = 200
+limit_bottom = 144
+
+[node name="CRT Effect" parent="." unique_id=643495953 instance=ExtResource("2_pjuxn")]
+
+[node name="TransitionManager" parent="." unique_id=349036979 instance=ExtResource("3_coc5t")]
