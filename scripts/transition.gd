@@ -13,6 +13,7 @@ func _ready():
 func _on_area_body_entered(body):
 	if body.is_in_group("Player"):
 		body.can_move = false
+		Gamemanager.player_last_direction = body.last_direction
 		await _start_transition()
 
 

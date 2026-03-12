@@ -5,7 +5,8 @@ extends Control
 
 func _on_start_pressed() -> void:
 	AudioController.change_music(new_music)
-	TransitionManager.fade_to_scene("res://scenes/TestScenes/node_2d.tscn")
+	Gamemanager.player_last_direction = Vector2.UP
+	TransitionManager.fade_to_scene("res://scenes/FrontGameScenes/front_level_1.tscn")
 
 
 func _on_exit_pressed() -> void:

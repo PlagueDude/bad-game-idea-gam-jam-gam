@@ -2,21 +2,111 @@
 
 [ext_resource type="PackedScene" uid="uid://casj35xexy3ae" path="res://scenes/player scene/player.tscn" id="1_p04mw"]
 [ext_resource type="PackedScene" uid="uid://c42s45dj0qsel" path="res://scenes/crt_effect.tscn" id="2_pjuxn"]
-[ext_resource type="PackedScene" uid="uid://d6y7t7y7id7y" path="res://scenes/transition_manager.tscn" id="3_coc5t"]
+[ext_resource type="Texture2D" uid="uid://boyn8ujluy46o" path="res://sprites/BGIGJamTilemap1.png" id="3_p04mw"]
+[ext_resource type="PackedScene" uid="uid://bicjnxecdvj2b" path="res://scenes/transition.tscn" id="4_pjuxn"]
+[ext_resource type="PackedScene" uid="uid://dxlkccuwsga10" path="res://scenes/interaction.tscn" id="5_coc5t"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pjuxn"]
+texture = ExtResource("3_p04mw")
+1:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:0/0 = 0
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:1/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+6:2/0 = 0
+6:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:2/0 = 0
+7:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:2/0 = 0
+8:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:3/0 = 0
+4:3/0 = 0
+6:3/0 = 0
+6:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:3/0 = 0
+8:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:4/0 = 0
+6:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:4/0 = 0
+7:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:4/0 = 0
+8:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:4/0 = 0
+5:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:4/0 = 0
+4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:4/0 = 0
+3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:4/0 = 0
+5:3/0 = 0
+5:2/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+10:1/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+11:1/0 = 0
+11:0/0 = 0
+9:1/0 = 0
+9:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_coc5t"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_pjuxn")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_coc5t"]
+size = Vector2(98, 23)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qya3p"]
+size = Vector2(103, 14)
 
 [node name="FrontLevel1" type="Node2D" unique_id=1226015992]
 
-[node name="Player" parent="." unique_id=1939095047 instance=ExtResource("1_p04mw")]
-position = Vector2(25, 56)
+[node name="CRT Effect" parent="." unique_id=643495953 instance=ExtResource("2_pjuxn")]
 
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=2062838835]
+[node name="TileMap" type="TileMap" parent="." unique_id=514530252]
+tile_set = SubResource("TileSet_coc5t")
+format = 2
+layer_0/tile_data = PackedInt32Array(458751, 589824, 1, 524287, 589824, 1, 393216, 655360, 1, 458752, 655360, 1, 327679, 589824, 1, 393215, 589824, 1, 262144, 655360, 1, 327680, 655360, 1, 196607, 589824, 1, 262143, 589824, 1, 131072, 655360, 1, 196608, 655360, 1, 65535, 589824, 1, 131071, 589824, 1, 0, 655360, 1, 65536, 655360, 1, -65537, 589824, 1, -1, 589824, 1, -131072, 655360, 1, -65536, 655360, 1, -131071, 655360, 1, -65535, 655360, 1, -131070, 655360, 1, -65534, 655360, 1, -131069, 655360, 1, -65533, 655360, 1, -131068, 720896, 1, -65532, 720896, 1, -131067, 196608, 0, -65531, 196608, 1, -131066, 458752, 0, -65530, 262144, 0, 5, 196608, 0, 65541, 196608, 1, 6, 262144, 1, 65542, 262144, 0, 131077, 196608, 0, 196613, 196608, 1, 131078, 262144, 1, 196614, 262144, 0, 262149, 196608, 0, 327685, 196608, 1, 262150, 262144, 1, 327686, 262144, 0, 393221, 196608, 0, 458757, 196608, 1, 393222, 262144, 1, 458758, 262144, 0, 393219, 655360, 1, 458755, 655360, 1, 393220, 720896, 1, 458756, 720896, 1, 393217, 655360, 1, 458753, 655360, 1, 393218, 655360, 1, 458754, 655360, 1, 262145, 655360, 1, 327681, 655360, 1, 262146, 655360, 1, 327682, 655360, 1, 131073, 655360, 1, 196609, 655360, 1, 131074, 655360, 1, 196610, 655360, 1, 1, 655360, 1, 65537, 655360, 1, 2, 655360, 1, 65538, 655360, 1, 3, 655360, 1, 65539, 655360, 1, 4, 720896, 1, 65540, 720896, 1, 131075, 655360, 1, 196611, 655360, 1, 131076, 720896, 1, 196612, 720896, 1, 262147, 655360, 1, 327683, 655360, 1, 262148, 720896, 1, 327684, 720896, 1, -196607, 655360, 1, -65538, 262144, 0, -2, 262144, 0, 65534, 262144, 1, 131070, 262144, 0, 196606, 262144, 1, 262142, 262144, 0, 327678, 262144, 1, 393214, 262144, 0, 458750, 262144, 1, 524286, 262144, 0, 589822, 262144, 1, 589823, 589824, 1, 524292, 720896, 1, 524293, 262144, 1, 524294, 458752, 0, 524288, 655360, 1, 524289, 655360, 1, 524290, 655360, 1, 524291, 655360, 1, -65540, 458752, 0, -4, 458752, 0, -65539, 458752, 0, -3, 196608, 0, 65533, 196608, 1, 131069, 196608, 0, 196605, 196608, 1, 262141, 196608, 0, 327677, 196608, 1, 393213, 196608, 0, 458749, 196608, 1, 524285, 196608, 0, 589821, 524288, 0, 589820, 458752, 0, 524284, 458752, 0, 458748, 458752, 0, 393212, 458752, 0, 327676, 458752, 0, 262140, 458752, 0, 196604, 458752, 0, 131068, 458752, 0, 65532, 458752, 0, -5, 458752, 0, -65541, 458752, 0, -131077, 458752, 0, -131076, 458752, 0, -131075, 458752, 0, -196611, 458752, 0, -131074, 458752, 0, -131073, 589824, 1, -196604, 720896, 1, -196603, 458752, 0, -196602, 458752, 0, -196601, 458752, 0, -131065, 458752, 0, -65529, 458752, 0, 7, 458752, 0, 65543, 458752, 0, 131079, 458752, 0, 196615, 458752, 0, 262151, 458752, 0, 327687, 458752, 0, 393223, 458752, 0, 458759, 458752, 0, 524295, 458752, 0, 524296, 458752, 0, 458760, 458752, 0, 393224, 458752, 0, 327688, 458752, 0, 262152, 458752, 0, 196616, 458752, 0, 131080, 458752, 0, 65544, 458752, 0, 8, 458752, 0, -65528, 458752, 0, -131064, 458752, 0, -196600, 458752, 0, 65531, 458752, 0, 131067, 458752, 0, 196603, 458752, 0, 262139, 458752, 0, 327675, 458752, 0, 393211, 458752, 0, 458746, 458752, 0, 524282, 458752, 0, 524283, 458752, 0, 458747, 458752, 0, 589819, 458752, 0, 655355, 458752, 0, 655356, 458752, 0, 655357, 458752, 0, 655358, 458752, 0, 589829, 458752, 0, 589830, 458752, 0, 589831, 458752, 0, 589832, 458752, 0, 655359, 589824, 1, 589828, 720896, 1, 589827, 655360, 1, 589826, 655360, 1, 589825, 655360, 1, 589824, 655360, 1, -196608, 655360, 1, -196606, 655360, 1, -196605, 655360, 1, -262137, 458752, 0, -262136, 524288, 0, -262139, 458752, 0, -262138, 524288, 0, -262141, 458752, 0, -262140, 524288, 0, -262143, 458752, 0, -262142, 524288, 0, -196609, 458752, 0, -262144, 524288, 0, -196610, 524288, 0, -196613, 458752, 0, -196612, 524288, 0, 655364, 458752, 0, 655365, 524288, 0, 655362, 458752, 0, 655363, 524288, 0, 655360, 458752, 0, 655361, 524288, 0, 720894, 458752, 0, 720895, 524288, 0)
+
+[node name="Player" parent="." unique_id=1939095047 instance=ExtResource("1_p04mw")]
+position = Vector2(31, 135)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=2026854435]
 position = Vector2(0, -1)
 zoom = Vector2(6, 6)
 limit_left = -64
-limit_top = -16
-limit_right = 200
-limit_bottom = 144
+limit_top = -48
+limit_right = 128
+limit_bottom = 160
 
-[node name="CRT Effect" parent="." unique_id=643495953 instance=ExtResource("2_pjuxn")]
+[node name="Transition" parent="." unique_id=1269792738 instance=ExtResource("4_pjuxn")]
+position = Vector2(28, -46)
+next_scene = "res://scenes/TestScenes/node_2d.tscn"
 
-[node name="TransitionManager" parent="." unique_id=349036979 instance=ExtResource("3_coc5t")]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Transition" unique_id=1505987411]
+position = Vector2(4, 1.5)
+shape = SubResource("RectangleShape2D_coc5t")
+
+[node name="Interaction" parent="." unique_id=826853225 instance=ExtResource("5_coc5t")]
+position = Vector2(30, 155)
+interact_start = "res://Timelines/Universal Lines/RefusalToExitLine.dtl"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction" unique_id=253598674]
+position = Vector2(1.5, 3)
+shape = SubResource("RectangleShape2D_qya3p")

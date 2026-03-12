@@ -30,6 +30,7 @@ directories/dch_directory={
 "unit_test_character": "res://Misc/Tests/Resources/unit_test_character.dch"
 }
 directories/dtl_directory={
+"RefusalToExitLine": "res://Timelines/Universal Lines/RefusalToExitLine.dtl",
 "TestLine": "res://Timelines/TestDialog/TestLine.dtl",
 "TestLine2": "res://Timelines/TestDialog/TestLine2.dtl",
 "TestLine3": "res://Timelines/TestDialog/TestLine3.dtl",

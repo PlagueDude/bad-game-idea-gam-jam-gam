@@ -14,6 +14,8 @@ var can_move = true
 var last_direction = Vector2.DOWN
 
 func _ready():
+	last_direction = Gamemanager.player_last_direction
+	play_idle()
 	if Dialogic:
 		Dialogic.timeline_started.connect(func(): can_move = false)
 		Dialogic.timeline_ended.connect(func(): can_move = true)

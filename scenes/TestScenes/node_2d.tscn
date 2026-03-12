@@ -8,8 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://d6y7t7y7id7y" path="res://scenes/transition_manager.tscn" id="7_h4jw1"]
 [ext_resource type="PackedScene" uid="uid://bicjnxecdvj2b" path="res://scenes/transition.tscn" id="8_iiumy"]
 [ext_resource type="PackedScene" uid="uid://c42s45dj0qsel" path="res://scenes/crt_effect.tscn" id="9_6q20d"]
+[ext_resource type="Texture2D" uid="uid://crf6dtppbcbv4" path="res://icon.svg" id="9_hjooy"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h4jw1"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6q20d"]
 texture = ExtResource("2_fbjkl")
 1:0/0 = 0
 3:0/0 = 0
@@ -70,7 +71,7 @@ texture = ExtResource("2_fbjkl")
 
 [sub_resource type="TileSet" id="TileSet_04qyp"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_h4jw1")
+sources/0 = SubResource("TileSetAtlasSource_6q20d")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4vge2"]
 radius = 7.2111025
@@ -85,6 +86,9 @@ size = Vector2(20, 39)
 size = Vector2(23, 40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6q20d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3wrqn"]
+size = Vector2(13, 12)
 
 [node name="Node2D" type="Node2D" unique_id=431440087]
 
@@ -161,6 +165,7 @@ next_scene = "res://scenes/TestScenes/test_2.tscn"
 mute_music = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Transition" unique_id=195125899]
+position = Vector2(0, -4)
 shape = SubResource("RectangleShape2D_6q20d")
 
 [node name="CRT Effect" parent="." unique_id=643495953 instance=ExtResource("9_6q20d")]
@@ -173,3 +178,16 @@ metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Transition2" unique_id=543827470]
 shape = SubResource("RectangleShape2D_6q20d")
+
+[node name="PushBlock" type="RigidBody2D" parent="." unique_id=1189585567]
+position = Vector2(66, 94)
+mass = 0.001
+gravity_scale = 0.0
+
+[node name="Sprite2D" type="Sprite2D" parent="PushBlock" unique_id=1889690336]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("9_hjooy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PushBlock" unique_id=318324254]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_3wrqn")
