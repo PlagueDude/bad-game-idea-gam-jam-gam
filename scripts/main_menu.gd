@@ -10,4 +10,5 @@ func _on_start_pressed() -> void:
 
 
 func _on_exit_pressed() -> void:
+	await TransitionManager._fade_out()
 	get_tree().quit()

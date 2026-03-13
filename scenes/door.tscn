@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cs1ytvyf56r2i"]
+
+[ext_resource type="Texture2D" uid="uid://cx3etv5f1mfb0" path="res://sprites/doorbgigjam-Sheet.png" id="1_hpvv5"]
+[ext_resource type="Script" uid="uid://r8enfo4r62ps" path="res://scripts/door.gd" id="2_uvdjg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hpvv5"]
+size = Vector2(26, 30)
+
+[node name="Door" type="Sprite2D" unique_id=2061553179]
+texture = ExtResource("1_hpvv5")
+hframes = 2
+script = ExtResource("2_uvdjg")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=955202286]
+
+[node name="DoorCollision" type="CollisionShape2D" parent="StaticBody2D" unique_id=143346670]
+unique_name_in_owner = true
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_hpvv5")

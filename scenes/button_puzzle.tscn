@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://lrlrag5fx3bm"]
+
+[ext_resource type="PackedScene" uid="uid://cog54fs5ts7x4" path="res://scenes/button.tscn" id="1_1rsmf"]
+[ext_resource type="Script" uid="uid://chya65gx4ubls" path="res://scripts/button_puzzle.gd" id="1_prkpe"]
+
+[node name="ButtonPuzzle" type="Node2D" unique_id=278197616]
+script = ExtResource("1_prkpe")
+
+[node name="Button" parent="." unique_id=1445680287 instance=ExtResource("1_1rsmf")]
+
+[node name="Button2" parent="." unique_id=1667946009 instance=ExtResource("1_1rsmf")]
+position = Vector2(72, 0)
+
+[node name="Button3" parent="." unique_id=1392791481 instance=ExtResource("1_1rsmf")]
+position = Vector2(48, 0)
+
+[node name="Button4" parent="." unique_id=2139134511 instance=ExtResource("1_1rsmf")]
+position = Vector2(24, 0)

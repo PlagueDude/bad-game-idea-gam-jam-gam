@@ -12,16 +12,10 @@ func set_mute(value: bool):
 			music.play()
 
 func change_music(new_stream: AudioStream):
-	var tween = create_tween()
-	tween.tween_property(music, "volume_db", -40, 1.0)
-	await tween.finished
 	music.stop()
 	music.stream = new_stream
 	if not mute:
 		music.play()
-	music.volume_db = -40
-	var tween2 = create_tween()
-	tween2.tween_property(music, "volume_db", 0, 1.0)
 
 func play_OpenDoor():
 	$OpenDoor.play()
@@ -31,3 +25,9 @@ func play_PushBlock():
 
 func play_GotCaught():
 	$GotCaught.play()
+
+func play_ButtonClick():
+	$ButtonClick.play()
+
+func play_SpotlightSwitch():
+	$SpotlightSwitch.play()

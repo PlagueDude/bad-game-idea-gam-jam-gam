@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://bicjnxecdvj2b" path="res://scenes/transition.tscn" id="8_iiumy"]
 [ext_resource type="PackedScene" uid="uid://c42s45dj0qsel" path="res://scenes/crt_effect.tscn" id="9_6q20d"]
 [ext_resource type="Texture2D" uid="uid://crf6dtppbcbv4" path="res://icon.svg" id="9_hjooy"]
+[ext_resource type="PackedScene" uid="uid://lrlrag5fx3bm" path="res://scenes/button_puzzle.tscn" id="10_hjooy"]
+[ext_resource type="PackedScene" uid="uid://cs1ytvyf56r2i" path="res://scenes/door.tscn" id="11_3wrqn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6q20d"]
 texture = ExtResource("2_fbjkl")
@@ -70,7 +72,8 @@ texture = ExtResource("2_fbjkl")
 9:2/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_04qyp"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 3
+physics_layer_0/collision_mask = 3
 sources/0 = SubResource("TileSetAtlasSource_6q20d")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4vge2"]
@@ -88,12 +91,16 @@ size = Vector2(23, 40)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6q20d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3wrqn"]
-size = Vector2(13, 17)
+size = Vector2(12, 12)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6q20d"]
+radius = 6.0
 
 [node name="Node2D" type="Node2D" unique_id=431440087]
 
 [node name="Player" parent="." unique_id=1939095047 instance=ExtResource("1_xj5xm")]
 position = Vector2(25, 56)
+collision_layer = 3
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=707214528]
 position = Vector2(0, -1)
@@ -189,13 +196,27 @@ shape = SubResource("RectangleShape2D_6q20d")
 
 [node name="PushBlock" type="RigidBody2D" parent="." unique_id=1189585567]
 position = Vector2(66, 94)
-mass = 0.001
+collision_layer = 2
+collision_mask = 2
+mass = 100.0
 gravity_scale = 0.0
+sleeping = true
+lock_rotation = true
+freeze_mode = 1
+linear_damp = 100.0
+angular_damp = 100.0
 
 [node name="Sprite2D" type="Sprite2D" parent="PushBlock" unique_id=1889690336]
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("9_hjooy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PushBlock" unique_id=318324254]
-position = Vector2(-0.5, 0)
-shape = SubResource("RectangleShape2D_3wrqn")
+shape = SubResource("CircleShape2D_6q20d")
+
+[node name="ButtonPuzzle" parent="." unique_id=278197616 node_paths=PackedStringArray("door") instance=ExtResource("10_hjooy")]
+position = Vector2(-37, 112)
+door = NodePath("../Door")
+order = Array[int]([1, 0, 2, 3])
+
+[node name="Door" parent="." unique_id=2061553179 instance=ExtResource("11_3wrqn")]
+position = Vector2(142, 43)
