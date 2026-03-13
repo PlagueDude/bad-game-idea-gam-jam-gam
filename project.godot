@@ -30,13 +30,16 @@ directories/dch_directory={
 "unit_test_character": "res://Misc/Tests/Resources/unit_test_character.dch"
 }
 directories/dtl_directory={
+"ItsAFlower": "res://Timelines/FrontGameLines/ItsAFlower.dtl",
 "RefusalToExitLine": "res://Timelines/Universal Lines/RefusalToExitLine.dtl",
+"SignExplainingSigns": "res://Timelines/FrontGameLines/SignExplainingSigns.dtl",
 "TestLine": "res://Timelines/TestDialog/TestLine.dtl",
 "TestLine2": "res://Timelines/TestDialog/TestLine2.dtl",
 "TestLine3": "res://Timelines/TestDialog/TestLine3.dtl",
 "TestLine5": "res://Timelines/TestDialog/TestLine5.dtl",
 "Testline4": "res://Timelines/TestDialog/Testline4.dtl",
-"Testline6": "res://Timelines/TestDialog/Testline6.dtl"
+"Testline6": "res://Timelines/TestDialog/Testline6.dtl",
+"WelcomeSign1": "res://Timelines/FrontGameLines/WelcomeSign1.dtl"
 }
 layout/style_directory={
 "": "res://Timelines/Style1.tres",

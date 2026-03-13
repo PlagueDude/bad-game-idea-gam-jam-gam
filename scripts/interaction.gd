@@ -4,6 +4,7 @@ extends Area2D
 @export var interact_bonus : String
 @export var unlock_sprint : bool = false
 @export var lock_sprint : bool = false
+@export var walk_in : bool = false
 
 var has_been_interacted = false
 

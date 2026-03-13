@@ -88,7 +88,7 @@ size = Vector2(23, 40)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6q20d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3wrqn"]
-size = Vector2(13, 12)
+size = Vector2(13, 17)
 
 [node name="Node2D" type="Node2D" unique_id=431440087]
 
@@ -160,13 +160,21 @@ shape = SubResource("RectangleShape2D_fws66")
 [node name="TransitionManager" parent="." unique_id=349036979 instance=ExtResource("7_h4jw1")]
 
 [node name="Transition" parent="." unique_id=1269792738 instance=ExtResource("8_iiumy")]
-position = Vector2(57, -23)
+position = Vector2(57, -31)
 next_scene = "res://scenes/TestScenes/test_2.tscn"
 mute_music = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Transition" unique_id=195125899]
-position = Vector2(0, -4)
+position = Vector2(0, -10)
 shape = SubResource("RectangleShape2D_6q20d")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Transition" unique_id=2090059108]
+position = Vector2(-16, 9)
+shape = SubResource("RectangleShape2D_3wrqn")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Transition/CollisionShape2D2" unique_id=946216255]
+position = Vector2(33, -2.5)
+shape = SubResource("RectangleShape2D_3wrqn")
 
 [node name="CRT Effect" parent="." unique_id=643495953 instance=ExtResource("9_6q20d")]
 

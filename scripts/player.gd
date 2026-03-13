@@ -32,29 +32,21 @@ func _physics_process(delta):
 		try_interact()
 
 	var direction = Vector2.ZERO
-	
 	direction.x = Input.get_action_strength("right") - Input.get_action_strength("left")
 	direction.y = Input.get_action_strength("down") - Input.get_action_strength("up")
-	
 	if direction != Vector2.ZERO:
 		direction = direction.normalized()
 		last_direction = direction
-	
 	var sprinting = Gamemanager.sprint_unlocked and Input.is_action_pressed("sprint")
 	var current_speed = sprint_speed if sprinting else walk_speed
-	
 	var target_velocity = direction * current_speed
-	
 	if direction != Vector2.ZERO:
 		velocity = velocity.move_toward(target_velocity, acceleration * delta)
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, friction * delta)
-	
 	if direction != Vector2.ZERO:
 		velocity += direction * gravity_strength * delta
-	
 	move_and_slide()
-	
 	if direction != Vector2.ZERO:
 		if abs(direction.x) > abs(direction.y):
 			if direction.x > 0:
@@ -68,7 +60,6 @@ func _physics_process(delta):
 				anim.play("walk_up")
 	else:
 		play_idle()
-	
 	if sprinting and direction != Vector2.ZERO:
 		sprint_particles.emitting = true
 		if abs(direction.x) > abs(direction.y):
