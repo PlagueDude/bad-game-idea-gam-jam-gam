@@ -219,4 +219,4 @@ door = NodePath("../Door")
 order = Array[int]([1, 0, 2, 3])
 
 [node name="Door" parent="." unique_id=2061553179 instance=ExtResource("11_3wrqn")]
-position = Vector2(142, 43)
+position = Vector2(139, 45)

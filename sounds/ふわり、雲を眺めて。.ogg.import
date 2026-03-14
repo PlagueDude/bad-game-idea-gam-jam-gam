@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/ふわり、雲を眺めて。.ogg-2c76b6cf61
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

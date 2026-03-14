@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cp7tna2k45np4" path="res://sprites/SignBGIGJam.png" id="6_qya3p"]
 [ext_resource type="Texture2D" uid="uid://dmt0wosrta0dm" path="res://sprites/FlowerBGIGJ-Sheet.png" id="7_ukcsj"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pjuxn"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ukcsj"]
 texture = ExtResource("3_p04mw")
 1:0/0 = 0
 3:0/0 = 0
@@ -69,7 +69,7 @@ texture = ExtResource("3_p04mw")
 
 [sub_resource type="TileSet" id="TileSet_coc5t"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_pjuxn")
+sources/0 = SubResource("TileSetAtlasSource_ukcsj")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_coc5t"]
 size = Vector2(98, 23)
@@ -105,7 +105,7 @@ limit_bottom = 160
 
 [node name="Transition" parent="." unique_id=1269792738 instance=ExtResource("4_pjuxn")]
 position = Vector2(28, -46)
-next_scene = "res://scenes/TestScenes/node_2d.tscn"
+next_scene = "res://scenes/FrontGameScenes/front_level_2.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Transition" unique_id=1505987411]
 position = Vector2(4, 1.5)
@@ -164,7 +164,7 @@ position = Vector2(87, 91)
 
 [node name="FlowerBgigjSheet" type="Sprite2D" parent="Flower" unique_id=1506878942]
 texture = ExtResource("7_ukcsj")
-hframes = 2
+hframes = 3
 
 [node name="Interaction" parent="Flower/FlowerBgigjSheet" unique_id=1278497381 instance=ExtResource("5_coc5t")]
 interact_start = "res://Timelines/FrontGameLines/ItsAFlower.dtl"
@@ -183,7 +183,7 @@ metadata/_edit_group_ = true
 
 [node name="FlowerBgigjSheet" type="Sprite2D" parent="Flower2" unique_id=74699862]
 texture = ExtResource("7_ukcsj")
-hframes = 2
+hframes = 3
 frame = 1
 
 [node name="Interaction" parent="Flower2/FlowerBgigjSheet" unique_id=238984111 instance=ExtResource("5_coc5t")]
@@ -203,7 +203,7 @@ metadata/_edit_group_ = true
 
 [node name="FlowerBgigjSheet" type="Sprite2D" parent="Flower3" unique_id=2093627022]
 texture = ExtResource("7_ukcsj")
-hframes = 2
+hframes = 3
 frame = 1
 
 [node name="Interaction" parent="Flower3/FlowerBgigjSheet" unique_id=472126452 instance=ExtResource("5_coc5t")]
@@ -217,21 +217,23 @@ shape = SubResource("RectangleShape2D_3uc2e")
 position = Vector2(-0.5, 3.5)
 shape = SubResource("RectangleShape2D_3uc2e")
 
-[node name="Flower4" type="StaticBody2D" parent="." unique_id=1820796279]
+[node name="FlowerCamera" type="StaticBody2D" parent="." unique_id=1820796279]
 position = Vector2(88, -27)
 metadata/_edit_group_ = true
 
-[node name="FlowerBgigjSheet" type="Sprite2D" parent="Flower4" unique_id=1314026048]
+[node name="FlowerBgigjSheet" type="Sprite2D" parent="FlowerCamera" unique_id=1314026048]
 texture = ExtResource("7_ukcsj")
-hframes = 2
+hframes = 3
+frame = 2
 
-[node name="Interaction" parent="Flower4/FlowerBgigjSheet" unique_id=1178618424 instance=ExtResource("5_coc5t")]
+[node name="Interaction" parent="FlowerCamera/FlowerBgigjSheet" unique_id=1178618424 instance=ExtResource("5_coc5t")]
 interact_start = "res://Timelines/FrontGameLines/ItsAFlower.dtl"
+interact_bonus = "res://Timelines/FrontGameLines/ItsaCamera.dtl"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Flower4/FlowerBgigjSheet/Interaction" unique_id=968903582]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FlowerCamera/FlowerBgigjSheet/Interaction" unique_id=968903582]
 position = Vector2(-0.5, 3.5)
 shape = SubResource("RectangleShape2D_3uc2e")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Flower4" unique_id=756724870]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FlowerCamera" unique_id=756724870]
 position = Vector2(-0.5, 3.5)
 shape = SubResource("RectangleShape2D_3uc2e")
