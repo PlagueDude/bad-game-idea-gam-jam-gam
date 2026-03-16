@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cp7tna2k45np4" path="res://sprites/SignBGIGJam.png" id="6_66ny7"]
 [ext_resource type="PackedScene" uid="uid://cs1ytvyf56r2i" path="res://scenes/door.tscn" id="6_fkqpc"]
 [ext_resource type="Texture2D" uid="uid://dmt0wosrta0dm" path="res://sprites/FlowerBGIGJ-Sheet.png" id="8_prst8"]
+[ext_resource type="Texture2D" uid="uid://dhu2os2g13bk7" path="res://sprites/BGIGJamNPCSprites-Sheet.png" id="10_qbjfm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wlp0s"]
 texture = ExtResource("2_vbrvx")
@@ -115,6 +116,12 @@ size = Vector2(7, 13)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qbjfm"]
 size = Vector2(25, 16)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_66ny7"]
+radius = 7.2111025
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wlp0s"]
+size = Vector2(14, 13)
+
 [node name="Front_Level_2" type="Node2D" unique_id=509892916]
 
 [node name="CRT Effect" parent="." unique_id=643495953 instance=ExtResource("1_fkqpc")]
@@ -147,7 +154,7 @@ shape = SubResource("RectangleShape2D_ufmeg")
 [node name="ButtonPuzzle" parent="." unique_id=278197616 node_paths=PackedStringArray("door") instance=ExtResource("5_ihw8j")]
 position = Vector2(-86, 18)
 door = NodePath("../Door")
-order = Array[int]([1, 3, 2, 0])
+order = Array[int]([2, 3, 0, 1])
 
 [node name="Door" parent="." unique_id=2061553179 instance=ExtResource("6_fkqpc")]
 position = Vector2(32, -64)
@@ -265,3 +272,22 @@ position = Vector2(154, 122)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Transition2" unique_id=806887253]
 position = Vector2(1.5, -2)
 shape = SubResource("RectangleShape2D_qbjfm")
+
+[node name="NPC" type="StaticBody2D" parent="." unique_id=567647182]
+position = Vector2(-66, 60)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC" unique_id=1660658655]
+position = Vector2(0, 9)
+shape = SubResource("CircleShape2D_66ny7")
+
+[node name="Sprite2D" type="Sprite2D" parent="NPC" unique_id=1717217676]
+texture = ExtResource("10_qbjfm")
+hframes = 10
+
+[node name="Interaction" parent="NPC" unique_id=1736835830 instance=ExtResource("5_qbjfm")]
+interact_start = "res://Timelines/FrontGameLines/FirstNPCFirst.dtl"
+interact_bonus = "res://Timelines/FrontGameLines/FirstNPCSecond.dtl"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Interaction" unique_id=1833606450]
+position = Vector2(0, 9.5)
+shape = SubResource("RectangleShape2D_wlp0s")

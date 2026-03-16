@@ -237,3 +237,11 @@ shape = SubResource("RectangleShape2D_3uc2e")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FlowerCamera" unique_id=756724870]
 position = Vector2(-0.5, 3.5)
 shape = SubResource("RectangleShape2D_3uc2e")
+
+[node name="Transition2" parent="." unique_id=1292199335 instance=ExtResource("4_pjuxn")]
+position = Vector2(121, -60)
+next_scene = "res://scenes/FrontGameScenes/front_level_2.tscn"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Transition2" unique_id=1392284748]
+position = Vector2(4, 1.5)
+shape = SubResource("RectangleShape2D_coc5t")

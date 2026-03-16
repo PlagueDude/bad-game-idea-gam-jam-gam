@@ -17,5 +17,5 @@ func push_order(value):
 	if stack == order:
 		door.open_door()
 		print("OPEN SAYS ME")
-	else:
-		door.close_door()
+	#else:
+		#door.close_door()

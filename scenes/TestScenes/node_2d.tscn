@@ -195,6 +195,7 @@ metadata/_edit_group_ = true
 shape = SubResource("RectangleShape2D_6q20d")
 
 [node name="PushBlock" type="RigidBody2D" parent="." unique_id=1189585567]
+z_index = 1
 position = Vector2(66, 94)
 collision_layer = 2
 collision_mask = 2

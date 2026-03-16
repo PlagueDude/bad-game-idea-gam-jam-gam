@@ -31,6 +31,8 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "ButtonPuzzleA": "res://Timelines/FrontGameLines/ButtonPuzzleA.dtl",
+"FirstNPCFirst": "res://Timelines/FrontGameLines/FirstNPCFirst.dtl",
+"FirstNPCSecond": "res://Timelines/FrontGameLines/FirstNPCSecond.dtl",
 "ItsAFlower": "res://Timelines/FrontGameLines/ItsAFlower.dtl",
 "ItsaCamera": "res://Timelines/FrontGameLines/ItsaCamera.dtl",
 "RefusalToExitLine": "res://Timelines/Universal Lines/RefusalToExitLine.dtl",
@@ -54,6 +56,9 @@ layout/style_list=["res://Timelines/Style1.tres", "res://Timelines/Styles/Style2
 layout/default_style="res://Timelines/Style1.tres"
 glossary/default_case_sensitive=true
 variables={
+"FrontVars": {
+"Answer_Given": false
+},
 "TestVars": {
 "Agree": false
 }
