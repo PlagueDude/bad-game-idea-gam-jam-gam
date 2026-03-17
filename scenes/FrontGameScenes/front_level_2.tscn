@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dmt0wosrta0dm" path="res://sprites/FlowerBGIGJ-Sheet.png" id="8_prst8"]
 [ext_resource type="Texture2D" uid="uid://dhu2os2g13bk7" path="res://sprites/BGIGJamNPCSprites-Sheet.png" id="10_qbjfm"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wlp0s"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qbjfm"]
 texture = ExtResource("2_vbrvx")
 1:0/0 = 0
 3:0/0 = 0
@@ -102,7 +102,7 @@ texture = ExtResource("2_vbrvx")
 
 [sub_resource type="TileSet" id="TileSet_dnhhd"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_wlp0s")
+sources/0 = SubResource("TileSetAtlasSource_qbjfm")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ufmeg"]
 size = Vector2(103, 14)
@@ -260,7 +260,7 @@ shape = SubResource("RectangleShape2D_dggol")
 
 [node name="Transition" parent="." unique_id=1269792738 instance=ExtResource("4_dggol")]
 position = Vector2(30, -65)
-next_scene = "res://scenes/TestScenes/node_2d.tscn"
+next_scene = "res://scenes/FrontGameScenes/front_level_3.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Transition" unique_id=629317089]
 position = Vector2(1.5, -2)
@@ -282,7 +282,7 @@ shape = SubResource("CircleShape2D_66ny7")
 
 [node name="Sprite2D" type="Sprite2D" parent="NPC" unique_id=1717217676]
 texture = ExtResource("10_qbjfm")
-hframes = 10
+hframes = 14
 
 [node name="Interaction" parent="NPC" unique_id=1736835830 instance=ExtResource("5_qbjfm")]
 interact_start = "res://Timelines/FrontGameLines/FirstNPCFirst.dtl"
