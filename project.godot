@@ -33,6 +33,7 @@ directories/dtl_directory={
 "ButtonPuzzleA": "res://Timelines/FrontGameLines/ButtonPuzzleA.dtl",
 "FirstNPCFirst": "res://Timelines/FrontGameLines/FirstNPCFirst.dtl",
 "FirstNPCSecond": "res://Timelines/FrontGameLines/FirstNPCSecond.dtl",
+"GoOrLeave": "res://Timelines/Universal Lines/GoOrLeave.dtl",
 "HouseTimeline": "res://Timelines/FrontGameLines/HouseTimeline.dtl",
 "ItsAFlower": "res://Timelines/FrontGameLines/ItsAFlower.dtl",
 "ItsaCamera": "res://Timelines/FrontGameLines/ItsaCamera.dtl",

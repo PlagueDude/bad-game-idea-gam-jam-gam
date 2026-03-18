@@ -5,6 +5,7 @@ extends CharacterBody2D
 @export var acceleration = 3000.0
 @export var friction = 4000.0
 @export var gravity_strength = 400.0
+@export var health = 3
 
 @onready var sprint_particles = $SprintParticles
 @onready var anim = $AnimationPlayer
@@ -80,6 +81,9 @@ func play_idle():
 			anim.play("idle_down")
 		else:
 			anim.play("idle_up")
+
+func attack_play():
+	pass
 
 func try_interact():
 	var areas = interact_area.get_overlapping_areas()
