@@ -1,0 +1,17 @@
+"Welcome to Lineton!"
+"It's not the biggest place, but its home!"
+- Ask
+	label Exposition
+	[style name="StyleNar"]
+	*Before you can do anything the man speaks*
+	[style name="Style1"]
+	"Although there is this monster holding up near the town hall."
+	"Quite the annoyance!"
+	[style name="StyleNar"]
+	*Now you recall, you need to kill that thing...How do you kill things again?*
+	[style name="Style1"]
+	"It even took my family's sword! Do something if you see it!"
+	[style name="StyleNar"]
+	*You nod.*
+- Leave
+	jump Exposition

@@ -33,8 +33,18 @@ directories/dtl_directory={
 "ButtonPuzzleA": "res://Timelines/FrontGameLines/ButtonPuzzleA.dtl",
 "FirstNPCFirst": "res://Timelines/FrontGameLines/FirstNPCFirst.dtl",
 "FirstNPCSecond": "res://Timelines/FrontGameLines/FirstNPCSecond.dtl",
+"HouseTimeline": "res://Timelines/FrontGameLines/HouseTimeline.dtl",
 "ItsAFlower": "res://Timelines/FrontGameLines/ItsAFlower.dtl",
 "ItsaCamera": "res://Timelines/FrontGameLines/ItsaCamera.dtl",
+"Itsafakeoutrock": "res://Timelines/FrontGameLines/Itsafakeoutrock.dtl",
+"Itsarock": "res://Timelines/FrontGameLines/Itsarock.dtl",
+"Itscardboard": "res://Timelines/FrontGameLines/Itscardboard.dtl",
+"NPC1Curl": "res://Timelines/FrontGameLines/NPC1Curl.dtl",
+"NPC1Curl2": "res://Timelines/FrontGameLines/NPC1Curl2.dtl",
+"NPC2Blond2": "res://Timelines/FrontGameLines/NPC2Blond2.dtl",
+"NPC2Blonde": "res://Timelines/FrontGameLines/NPC2Blonde.dtl",
+"NPC3Brother": "res://Timelines/FrontGameLines/NPC3Brother.dtl",
+"NPC3Brother2": "res://Timelines/FrontGameLines/NPC3Brother2.dtl",
 "RefusalToExitLine": "res://Timelines/Universal Lines/RefusalToExitLine.dtl",
 "SignExplainingSigns": "res://Timelines/FrontGameLines/SignExplainingSigns.dtl",
 "TestLine": "res://Timelines/TestDialog/TestLine.dtl",
@@ -43,7 +53,9 @@ directories/dtl_directory={
 "TestLine5": "res://Timelines/TestDialog/TestLine5.dtl",
 "Testline4": "res://Timelines/TestDialog/Testline4.dtl",
 "Testline6": "res://Timelines/TestDialog/Testline6.dtl",
-"WelcomeSign1": "res://Timelines/FrontGameLines/WelcomeSign1.dtl"
+"WelcomeSign1": "res://Timelines/FrontGameLines/WelcomeSign1.dtl",
+"WelcometoLineton": "res://Timelines/FrontGameLines/WelcometoLineton.dtl",
+"leavinglineton": "res://Timelines/FrontGameLines/leavinglineton.dtl"
 }
 layout/style_directory={
 "": "res://Timelines/Style1.tres",
@@ -57,7 +69,8 @@ layout/default_style="res://Timelines/Style1.tres"
 glossary/default_case_sensitive=true
 variables={
 "FrontVars": {
-"Answer_Given": false
+"Answer_Given": false,
+"TalkedToBro_": false
 },
 "TestVars": {
 "Agree": false
