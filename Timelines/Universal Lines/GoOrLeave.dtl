@@ -1,6 +1,6 @@
 [style name="StyleNar"]
-[lspeed=.05]*No turning back.*
-[lspeed=.05]*Go?*
+[lspeed=.039]*No turning back.*
+[lspeed=.039]*Go?*
 - Yes
 	[signal arg="yes"]
 - No

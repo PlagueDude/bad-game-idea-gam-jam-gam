@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/Talk4.ogg-7c86f0ad68cf0de8704b0d20eb7b0d0b.og
 [params]
 
 loop=false
-loop_offset=0
-bpm=0
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4

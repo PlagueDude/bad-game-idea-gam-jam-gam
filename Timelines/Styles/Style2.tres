@@ -17,6 +17,7 @@ script = ExtResource("2_dhi1w")
 scene = ExtResource("1_73yl8")
 overrides = {
 "global_bg_color": "Color(0.02734375, 0.0025634766, 0.013598442, 1)",
+"global_font": "\"res://BoldsPixels.ttf\"",
 "global_font_color": "Color(0.875, 0.1743164, 0.1743164, 1)",
 "global_font_size": "48.0"
 }
@@ -43,10 +44,11 @@ overrides = {
 "next_indicator_size": "Vector2(32, 32)",
 "next_indicator_texture": "\"res://sprites/indicator.png\"",
 "typing_sounds_mode": "2",
-"typing_sounds_pitch": "0.5",
-"typing_sounds_pitch_variance": "0.2",
-"typing_sounds_sounds_folder": "\"res://sounds/talk\"",
-"typing_sounds_volume": "-9.99"
+"typing_sounds_pitch": "0.9",
+"typing_sounds_pitch_variance": "0.35",
+"typing_sounds_sounds_folder": "\"res://sounds/Talk4\"",
+"typing_sounds_volume": "-5.0",
+"typing_sounds_volume_variance": "0.01"
 }
 
 [sub_resource type="Resource" id="Resource_ual03"]

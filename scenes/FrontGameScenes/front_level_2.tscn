@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cs1ytvyf56r2i" path="res://scenes/door.tscn" id="6_fkqpc"]
 [ext_resource type="Texture2D" uid="uid://dmt0wosrta0dm" path="res://sprites/FlowerBGIGJ-Sheet.png" id="8_prst8"]
 [ext_resource type="Texture2D" uid="uid://dhu2os2g13bk7" path="res://sprites/BGIGJamNPCSprites-Sheet.png" id="10_qbjfm"]
+[ext_resource type="Texture2D" uid="uid://b2gik6x7pmqrf" path="res://sprites/BGIGJAMROCKS-Sheet.png" id="11_66ny7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qbjfm"]
 texture = ExtResource("2_vbrvx")
@@ -121,6 +122,12 @@ radius = 7.2111025
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wlp0s"]
 size = Vector2(14, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dnhhd"]
+size = Vector2(23, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tdoka"]
+size = Vector2(16, 8)
 
 [node name="Front_Level_2" type="Node2D" unique_id=509892916]
 
@@ -268,6 +275,7 @@ shape = SubResource("RectangleShape2D_qbjfm")
 
 [node name="Transition2" parent="." unique_id=634048256 instance=ExtResource("4_dggol")]
 position = Vector2(-139, 110)
+next_scene = "res://scenes/BackScenes/Back_Level_1.tscn"
 push_direction = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Transition2" unique_id=806887253]
@@ -292,3 +300,47 @@ interact_bonus = "res://Timelines/FrontGameLines/FirstNPCSecond.dtl"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Interaction" unique_id=1833606450]
 position = Vector2(0, 9.5)
 shape = SubResource("RectangleShape2D_wlp0s")
+
+[node name="Rock4" type="StaticBody2D" parent="." unique_id=2013902492]
+position = Vector2(-24, -22)
+metadata/_edit_group_ = true
+
+[node name="BgigjamrocksSheet" type="Sprite2D" parent="Rock4" unique_id=1290819848]
+position = Vector2(4, -19)
+texture = ExtResource("11_66ny7")
+hframes = 5
+frame = 3
+
+[node name="Interaction" parent="Rock4/BgigjamrocksSheet" unique_id=1634025871 instance=ExtResource("5_qbjfm")]
+position = Vector2(-4, 18)
+interact_start = "res://Timelines/FrontGameLines/Itsarock.dtl"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rock4/BgigjamrocksSheet/Interaction" unique_id=1189339812]
+position = Vector2(3.5, -1)
+shape = SubResource("RectangleShape2D_dnhhd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rock4" unique_id=2037260924]
+position = Vector2(4, 1)
+shape = SubResource("RectangleShape2D_tdoka")
+
+[node name="Rock5" type="StaticBody2D" parent="." unique_id=950399947]
+position = Vector2(88, 118)
+metadata/_edit_group_ = true
+
+[node name="BgigjamrocksSheet" type="Sprite2D" parent="Rock5" unique_id=1194487582]
+position = Vector2(4, -19)
+texture = ExtResource("11_66ny7")
+hframes = 5
+frame = 3
+
+[node name="Interaction" parent="Rock5/BgigjamrocksSheet" unique_id=650732254 instance=ExtResource("5_qbjfm")]
+position = Vector2(-4, 18)
+interact_start = "res://Timelines/FrontGameLines/Itsarock.dtl"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rock5/BgigjamrocksSheet/Interaction" unique_id=1909046674]
+position = Vector2(3.5, -1)
+shape = SubResource("RectangleShape2D_dnhhd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rock5" unique_id=1935891733]
+position = Vector2(4, 1)
+shape = SubResource("RectangleShape2D_tdoka")

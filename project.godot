@@ -40,6 +40,7 @@ directories/dtl_directory={
 "Itsafakeoutrock": "res://Timelines/FrontGameLines/Itsafakeoutrock.dtl",
 "Itsarock": "res://Timelines/FrontGameLines/Itsarock.dtl",
 "Itscardboard": "res://Timelines/FrontGameLines/Itscardboard.dtl",
+"MonsterLine1": "res://Timelines/FrontGameLines/MonsterLines/MonsterLine1.dtl",
 "NPC1Curl": "res://Timelines/FrontGameLines/NPC1Curl.dtl",
 "NPC1Curl2": "res://Timelines/FrontGameLines/NPC1Curl2.dtl",
 "NPC2Blond2": "res://Timelines/FrontGameLines/NPC2Blond2.dtl",
