@@ -4,6 +4,6 @@ if {FrontVars.Answer_Given2} == true:
 "Oh! Ya, back! Want tah answer?"
 - Yes
 	set {FrontVars.Answer_Given2} = true
-	"Alrighty! "So, the answer is to just press the top left and then the bottom right one!"
+	"Alrighty! So, the answer is to just press the top left and then the bottom right one!"
 - No
 	"...Then why'd you talk to me?"

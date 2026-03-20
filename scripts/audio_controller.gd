@@ -31,3 +31,6 @@ func play_ButtonClick():
 
 func play_SpotlightSwitch():
 	$SpotlightSwitch.play()
+
+func play_ATTACK():
+	$ATTACK.play()
