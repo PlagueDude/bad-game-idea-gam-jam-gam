@@ -1,0 +1,9 @@
+"Oi, 'ello there again!"
+[style name="StyleNar"]
+*It's that one guy...His accent still sounds fake.*
+[style name="Style1"]
+"Got another puzzler fo-fer yah!"
+if {FrontVars.Answer_Given} == true:
+	"Yah already got a taste of my answering skill so, yah know the drill, yes?"
+	[end_timeline]
+"Just ask if ya need help!"

@@ -323,7 +323,7 @@ hue_variation_max = 0.1
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1609022855]
 libraries/ = SubResource("AnimationLibrary_c06da")
 
-[node name="InteractArea" type="Area2D" parent="." unique_id=207633748]
+[node name="InteractArea" type="Area2D" parent="." unique_id=207633748 groups=["Player"]]
 collision_layer = 2
 collision_mask = 2
 

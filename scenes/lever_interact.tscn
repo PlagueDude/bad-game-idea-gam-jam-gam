@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cdvrm1pdkkxf4"]
+
+[ext_resource type="Script" uid="uid://bjk1v1hgh2e3f" path="res://scripts/lever_interact.gd" id="1_tb10e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pd5dm"]
+size = Vector2(16, 13)
+
+[node name="LeverInteract" type="Area2D" unique_id=1708715566]
+script = ExtResource("1_tb10e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=246211059]
+shape = SubResource("RectangleShape2D_pd5dm")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

@@ -1,5 +1,5 @@
 if {FrontVars.Answer_Given} == true:
-	"So, the answer is is the third one first, then the second, first, and lastly fourth!"
+	"So, the answer is the third one first, then the second, first, and lastly fourth!"
 	[end_timeline]
 "Oh! Ya, back! Want tah answer?"
 - Yes

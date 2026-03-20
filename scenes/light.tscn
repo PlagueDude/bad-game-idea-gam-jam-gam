@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cufgx1n6sw0wj"]
+
+[ext_resource type="Texture2D" uid="uid://mokhgf68akw3" path="res://sprites/BGIGJamLight-Sheet.png" id="1_24oxn"]
+[ext_resource type="Script" uid="uid://36qr2n1kib67" path="res://scripts/light.gd" id="2_2e2gu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ky1i4"]
+size = Vector2(16, 10)
+
+[node name="Light" type="Sprite2D" unique_id=812094698]
+texture = ExtResource("1_24oxn")
+hframes = 2
+script = ExtResource("2_2e2gu")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2093294149]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=346573682]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_ky1i4")

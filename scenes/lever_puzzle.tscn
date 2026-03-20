@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://puvgqdhy12g8"]
+
+[ext_resource type="PackedScene" uid="uid://c2tectstbu2mf" path="res://scenes/lever.tscn" id="1_6lfvf"]
+[ext_resource type="Script" uid="uid://dj6k01wesoip7" path="res://scripts/lever_puzzle.gd" id="1_83ql6"]
+[ext_resource type="Script" uid="uid://rjlxnc4jr3dl" path="res://scripts/lever_manager.gd" id="1_tetfn"]
+[ext_resource type="PackedScene" uid="uid://cufgx1n6sw0wj" path="res://scenes/light.tscn" id="2_tetfn"]
+
+[node name="LeverPuzzle" type="Node2D" unique_id=1665731328]
+position = Vector2(-13, 0)
+script = ExtResource("1_83ql6")
+
+[node name="LeverManager" type="Node2D" parent="." unique_id=1446461053]
+unique_name_in_owner = true
+script = ExtResource("1_tetfn")
+
+[node name="Lever" parent="LeverManager" unique_id=2101494731 node_paths=PackedStringArray("Lights") instance=ExtResource("1_6lfvf")]
+position = Vector2(-51, -4)
+Lights = [NodePath("../../Lights/Light"), NodePath("../../Lights/Light4")]
+
+[node name="Lever2" parent="LeverManager" unique_id=240474301 node_paths=PackedStringArray("Lights") instance=ExtResource("1_6lfvf")]
+position = Vector2(-19, -4)
+Lights = [NodePath("../../Lights/Light3"), NodePath("../../Lights/Light")]
+
+[node name="Lever3" parent="LeverManager" unique_id=1592108458 node_paths=PackedStringArray("Lights") instance=ExtResource("1_6lfvf")]
+position = Vector2(-51, 25)
+Lights = [NodePath("../../Lights/Light4")]
+
+[node name="Lever4" parent="LeverManager" unique_id=130629586 node_paths=PackedStringArray("Lights") instance=ExtResource("1_6lfvf")]
+position = Vector2(-19, 25)
+Lights = [NodePath("../../Lights/Light2"), NodePath("../../Lights/Light3")]
+
+[node name="Lights" type="Node2D" parent="." unique_id=1093803400]
+unique_name_in_owner = true
+position = Vector2(0, -1)
+
+[node name="Light" parent="Lights" unique_id=812094698 instance=ExtResource("2_tetfn")]
+position = Vector2(-71, -37)
+
+[node name="Light2" parent="Lights" unique_id=1104842347 instance=ExtResource("2_tetfn")]
+position = Vector2(-47, -37)
+
+[node name="Light3" parent="Lights" unique_id=1933313142 instance=ExtResource("2_tetfn")]
+position = Vector2(-23, -37)
+
+[node name="Light4" parent="Lights" unique_id=1808066336 instance=ExtResource("2_tetfn")]
+position = Vector2(1, -37)

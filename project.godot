@@ -47,6 +47,8 @@ directories/dtl_directory={
 "NPC2Blonde": "res://Timelines/FrontGameLines/NPC2Blonde.dtl",
 "NPC3Brother": "res://Timelines/FrontGameLines/NPC3Brother.dtl",
 "NPC3Brother2": "res://Timelines/FrontGameLines/NPC3Brother2.dtl",
+"PuzzleNPC2": "res://Timelines/FrontGameLines/PuzzleNPC2.dtl",
+"PuzzleNPC2part2": "res://Timelines/FrontGameLines/PuzzleNPC2part2.dtl",
 "RefusalToExitLine": "res://Timelines/Universal Lines/RefusalToExitLine.dtl",
 "SignExplainingSigns": "res://Timelines/FrontGameLines/SignExplainingSigns.dtl",
 "TestLine": "res://Timelines/TestDialog/TestLine.dtl",
@@ -72,6 +74,7 @@ glossary/default_case_sensitive=true
 variables={
 "FrontVars": {
 "Answer_Given": false,
+"Answer_Given2": false,
 "TalkedToBro_": false
 },
 "TestVars": {
