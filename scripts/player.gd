@@ -142,11 +142,9 @@ func take_damage(amount, attacker_pos = Vector2.ZERO):
 	if health <= 0:
 		die()
 		return
-
-	# Hurt feedback
 	can_move = false
-	sprite.modulate = Color(1,0.5,0.5,0.7) # Tint sprite pale red
-	# Hurt audio goes here
+	sprite.modulate = Color(1,0.5,0.5,0.7)
+	# Hurt audio
 	if attacker_pos != Vector2.ZERO:
 		var knock_dir = (global_position - attacker_pos).normalized()
 		move_knockback(knock_dir, knockback_amount_hurt)

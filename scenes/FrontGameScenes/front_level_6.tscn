@@ -160,11 +160,13 @@ shape = SubResource("RectangleShape2D_ejg3h")
 position = Vector2(25, 46)
 script = null
 
-[node name="Interaction" parent="boss" unique_id=1441160438 instance=ExtResource("4_vx433")]
+[node name="Interaction2" parent="boss" unique_id=1441160438 instance=ExtResource("4_vx433")]
 collision_layer = 3
 collision_mask = 3
+interact_start = "res://Timelines/FrontGameLines/MonsterLines/MonsterLine1.dtl"
 walk_in = true
+activate_boss1 = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="boss/Interaction" unique_id=1111103138]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boss/Interaction2" unique_id=1111103138]
 position = Vector2(6.5, 48)
 shape = SubResource("RectangleShape2D_oj2fa")
