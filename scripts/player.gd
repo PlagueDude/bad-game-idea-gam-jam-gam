@@ -5,21 +5,24 @@ extends CharacterBody2D
 @export var acceleration = 3000.0
 @export var friction = 4000.0
 @export var gravity_strength = 400.0
-@export var max_health := 5
+@export var max_health = 5
 
 @onready var sprint_particles = $SprintParticles
 @onready var anim = $AnimationPlayer
 @onready var interact_area = $InteractArea
 @onready var sword_area = $AttackHitbox
+@onready var sprite = $Sprite2D
 
+var health : int
 var can_move = true
 var last_direction = Vector2.DOWN
 var is_attacking = false
+var knockback_amount_hurt = 16.0
+var knockback_amount_attack = 4.0
 
 func _ready():
-	if not "player_health" in Gamemanager:
-		Gamemanager.health = max_health
-	last_direction = Gamemanager.player_last_direction
+	health = max_health
+	last_direction = Vector2.DOWN
 	play_idle()
 	anim.animation_finished.connect(_on_animation_finished)
 	if Dialogic:
@@ -40,7 +43,7 @@ func _physics_process(delta):
 		return
 	if Input.is_action_just_pressed("interact"):
 		try_interact()
-	if Input.is_action_just_pressed("attack") and Gamemanager.attack_unlocked:
+	if Input.is_action_just_pressed("attack") and true:
 		start_attack()
 		return
 
@@ -51,17 +54,13 @@ func _physics_process(delta):
 		direction = direction.normalized()
 		last_direction = direction
 
-	var sprinting = Gamemanager.sprint_unlocked and Input.is_action_pressed("sprint")
-	var current_speed = sprint_speed if sprinting else walk_speed
-	var target_velocity = direction * current_speed
-
+	var current_speed = walk_speed
 	if direction != Vector2.ZERO:
-		velocity = velocity.move_toward(target_velocity, acceleration * delta)
+		velocity = velocity.move_toward(direction * current_speed, acceleration * delta)
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, friction * delta)
 
-	if direction != Vector2.ZERO:
-		velocity += direction * gravity_strength * delta
+	velocity += direction * gravity_strength * delta
 	move_and_slide()
 
 	if direction != Vector2.ZERO:
@@ -78,12 +77,8 @@ func _physics_process(delta):
 	else:
 		play_idle()
 
-	if sprinting and direction != Vector2.ZERO:
-		sprint_particles.emitting = true
-		if abs(direction.x) > abs(direction.y):
-			sprint_particles.rotation_degrees = -90 if direction.x > 0 else 90
-		else:
-			sprint_particles.rotation_degrees = 0 if direction.y > 0 else 180
+	if direction != Vector2.ZERO:
+		sprint_particles.emitting = false
 	else:
 		sprint_particles.emitting = false
 
@@ -102,8 +97,8 @@ func play_idle():
 func start_attack():
 	if is_attacking:
 		return
-	AudioController.play_ATTACK()
 	is_attacking = true
+	AudioController.play_ATTACK()
 	can_move = false
 	sword_area.monitoring = true
 	await get_tree().create_timer(0.2).timeout
@@ -112,17 +107,21 @@ func start_attack():
 	if abs(last_direction.x) > abs(last_direction.y):
 		if last_direction.x > 0:
 			anim.play("attack_right")
+			move_knockback(Vector2(-1,0), knockback_amount_attack)
 		else:
 			anim.play("attack_left")
+			move_knockback(Vector2(1,0), knockback_amount_attack)
 	else:
 		if last_direction.y > 0:
 			anim.play("attack_down")
+			move_knockback(Vector2(0,-1), knockback_amount_attack)
 		else:
 			anim.play("attack_up")
+			move_knockback(Vector2(0,1), knockback_amount_attack)
 
 func _on_sword_hit(body):
 	if body.is_in_group("Enemy") and body.has_method("take_damage"):
-		body.take_damage(1)
+		body.take_damage(1, global_position)
 
 func _on_animation_finished(anim_name):
 	if is_attacking and anim_name in ["attack_left","attack_right","attack_down","attack_up"]:
@@ -136,16 +135,28 @@ func try_interact():
 			area.interact()
 			return
 
-func take_damage(amount):
-	Gamemanager.player_health -= amount
-	if Gamemanager.player_health <= 0:
+func take_damage(amount, attacker_pos = Vector2.ZERO):
+	if health <= 0:
+		return
+	health -= amount
+	if health <= 0:
 		die()
-	else:
-		anim.play("hurt")
-		can_move = false
-		await get_tree().create_timer(0.3).timeout
-		can_move = true
+		return
+
+	# Hurt feedback
+	can_move = false
+	sprite.modulate = Color(1,0.5,0.5,0.7) # Tint sprite pale red
+	# Hurt audio goes here
+	if attacker_pos != Vector2.ZERO:
+		var knock_dir = (global_position - attacker_pos).normalized()
+		move_knockback(knock_dir, knockback_amount_hurt)
+	await get_tree().create_timer(0.3).timeout
+	sprite.modulate = Color(1,1,1,1)
+	can_move = true
+
+func move_knockback(direction: Vector2, distance: float):
+	global_position += direction * distance
 
 func die():
 	get_tree().reload_current_scene()
-	Gamemanager.player_health = max_health
+	health = max_health

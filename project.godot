@@ -19,10 +19,10 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Dialogic="*uid://ds2q0uclmolvu"
 Gamemanager="*uid://drkevrxmtmleb"
 TransitionManager="*uid://d6y7t7y7id7y"
 AudioController="*uid://ca2qhyf7exc4x"
+Dialogic="*uid://ds2q0uclmolvu"
 
 [dialogic]
 
@@ -69,7 +69,7 @@ layout/style_directory={
 "StyleBTS": "res://Timelines/Styles/StyleBTS.tres",
 "StyleNar": "res://Timelines/Styles/StyleNar.tres"
 }
-layout/style_list=["res://Timelines/Style1.tres", "res://Timelines/Styles/Style2.tres", "res://Timelines/Styles/StyleNar.tres", "res://Timelines/Styles/StyleBTS.tres"]
+layout/style_list=["res://Timelines/Styles/Style2.tres", "res://Timelines/Styles/StyleBTS.tres", "res://Timelines/Styles/StyleNar.tres", "res://Timelines/Style1.tres"]
 layout/default_style="res://Timelines/Style1.tres"
 glossary/default_case_sensitive=true
 variables={

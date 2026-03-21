@@ -1,0 +1,173 @@
+[gd_scene format=3 uid="uid://bttkr123r8cv5"]
+
+[ext_resource type="Script" uid="uid://drd2wg0sms6eb" path="res://scripts/boss.gd" id="1_neq0i"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dlmty"]
+load_path = "res://.godot/imported/BGIGJamMonster-Sheet.png-035acde4942a9e3a7be3238a71e89544.ctex"
+
+[sub_resource type="Animation" id="Animation_neq0i"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area2D/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_wqpjq"]
+resource_name = "charge"
+length = 0.2
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [11]
+}
+
+[sub_resource type="Animation" id="Animation_dlmty"]
+resource_name = "emerge"
+length = 0.8
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_r3bxh"]
+resource_name = "hurt"
+length = 0.4
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [8, 9]
+}
+
+[sub_resource type="Animation" id="Animation_qnbj4"]
+resource_name = "idle"
+length = 0.1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area2D/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_jncid"]
+resource_name = "walk_down"
+length = 0.8
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qnbj4"]
+_data = {
+&"RESET": SubResource("Animation_neq0i"),
+&"charge": SubResource("Animation_wqpjq"),
+&"emerge": SubResource("Animation_dlmty"),
+&"hurt": SubResource("Animation_r3bxh"),
+&"idle": SubResource("Animation_qnbj4"),
+&"walk_down": SubResource("Animation_jncid")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qnbj4"]
+size = Vector2(17, 26)
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_neq0i"]
+points = PackedVector2Array(15.5, 3, 12.5, 16, -12.5, 15, -16.5, 6, -16.5, 0, -6.5, -12, -1.5, -13, 6.5, -11, 13.5, -2)
+
+[node name="boss" type="CharacterBody2D" unique_id=960777537 groups=["Enemy"]]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_neq0i")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2084662287]
+texture = SubResource("CompressedTexture2D_dlmty")
+hframes = 12
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1846262335]
+libraries/ = SubResource("AnimationLibrary_qnbj4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1454006110]
+position = Vector2(0.5, 11)
+shape = SubResource("RectangleShape2D_qnbj4")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1371609216 groups=["Enemy"]]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=861004439 groups=["Enemy"]]
+position = Vector2(0.5, 10)
+shape = SubResource("ConvexPolygonShape2D_neq0i")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
