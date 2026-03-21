@@ -91,7 +91,7 @@ tracks/0/keys = {
 }
 tracks/1/type = "value"
 tracks/1/imported = false
-tracks/1/enabled = true
+tracks/1/enabled = false
 tracks/1/path = NodePath("AttackHitbox/CollisionShape2D:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
@@ -152,7 +152,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0.00053201616),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -226,10 +226,10 @@ tracks/3/path = NodePath("AttackHitbox/CollisionShape2D:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.0016419739),
+"times": PackedFloat32Array(0.0025659362),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_qo6o6"]
@@ -258,7 +258,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0.00016203523),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -587,15 +587,17 @@ position = Vector2(0, 15.5)
 shape = SubResource("RectangleShape2D_4ojry")
 
 [node name="hitbox" type="Area2D" parent="." unique_id=1519902537 groups=["Player"]]
+collision_mask = 2
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="hitbox" unique_id=1569436968]
 position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_tw1hs")
 debug_color = Color(0.5305189, 0.54085934, 0.51354235, 0.41960785)
 
-[node name="AttackHitbox" type="Area2D" parent="." unique_id=205665694]
+[node name="AttackHitbox" type="Area2D" parent="." unique_id=205665694 groups=["Player_Sword"]]
+collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackHitbox" unique_id=737684061]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackHitbox" unique_id=737684061 groups=["Player_Sword"]]
 position = Vector2(-5, -7)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_c06da")

@@ -5,39 +5,41 @@ extends CharacterBody2D
 @export var acceleration = 3000.0
 @export var friction = 4000.0
 @export var gravity_strength = 400.0
-@export var health = 3
+@export var max_health := 5
 
 @onready var sprint_particles = $SprintParticles
 @onready var anim = $AnimationPlayer
 @onready var interact_area = $InteractArea
+@onready var sword_area = $AttackHitbox
 
 var can_move = true
 var last_direction = Vector2.DOWN
 var is_attacking = false
 
 func _ready():
+	if not "player_health" in Gamemanager:
+		Gamemanager.health = max_health
 	last_direction = Gamemanager.player_last_direction
 	play_idle()
 	anim.animation_finished.connect(_on_animation_finished)
 	if Dialogic:
 		Dialogic.timeline_started.connect(func(): can_move = false)
 		Dialogic.timeline_ended.connect(func(): can_move = true)
+	sword_area.monitoring = false
+	sword_area.body_entered.connect(_on_sword_hit)
 
 func _physics_process(delta):
 	if is_attacking:
 		velocity = Vector2.ZERO
 		move_and_slide()
 		return
-
 	if not can_move:
 		velocity = Vector2.ZERO
 		move_and_slide()
 		play_idle()
 		return
-
 	if Input.is_action_just_pressed("interact"):
 		try_interact()
-
 	if Input.is_action_just_pressed("attack") and Gamemanager.attack_unlocked:
 		start_attack()
 		return
@@ -103,6 +105,9 @@ func start_attack():
 	AudioController.play_ATTACK()
 	is_attacking = true
 	can_move = false
+	sword_area.monitoring = true
+	await get_tree().create_timer(0.2).timeout
+	sword_area.monitoring = false
 
 	if abs(last_direction.x) > abs(last_direction.y):
 		if last_direction.x > 0:
@@ -115,6 +120,10 @@ func start_attack():
 		else:
 			anim.play("attack_up")
 
+func _on_sword_hit(body):
+	if body.is_in_group("Enemy") and body.has_method("take_damage"):
+		body.take_damage(1)
+
 func _on_animation_finished(anim_name):
 	if is_attacking and anim_name in ["attack_left","attack_right","attack_down","attack_up"]:
 		is_attacking = false
@@ -126,3 +135,17 @@ func try_interact():
 		if area.has_method("interact"):
 			area.interact()
 			return
+
+func take_damage(amount):
+	Gamemanager.player_health -= amount
+	if Gamemanager.player_health <= 0:
+		die()
+	else:
+		anim.play("hurt")
+		can_move = false
+		await get_tree().create_timer(0.3).timeout
+		can_move = true
+
+func die():
+	get_tree().reload_current_scene()
+	Gamemanager.player_health = max_health

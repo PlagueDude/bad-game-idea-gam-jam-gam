@@ -7,7 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://coe1qj3ungmcm" path="res://sounds/SFX/GotCaughtBetter.ogg" id="5_vj1x0"]
 [ext_resource type="AudioStream" uid="uid://b1t058yon06hd" path="res://sounds/SFX/840321__robo9418__wooden-short-click.wav" id="6_nf7h6"]
 [ext_resource type="AudioStream" uid="uid://c6hhb5elickm2" path="res://sounds/SFX/844619__dioram__switch-3.wav" id="7_my8s2"]
-[ext_resource type="AudioStream" uid="uid://bw7fi822xb6no" path="res://sounds/SFX/ATTACK.ogg" id="8_my8s2"]
+[ext_resource type="AudioStream" uid="uid://boxnenl0swbc2" path="res://sounds/SFX/ATTACKz.ogg" id="8_my8s2"]
 
 [node name="AudioController" type="Node2D" unique_id=671241188]
 editor_description = "Controls the Audio."

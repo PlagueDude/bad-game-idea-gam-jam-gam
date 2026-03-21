@@ -5,11 +5,13 @@ extends Area2D
 @export var unlock_sprint : bool = false
 @export var lock_sprint : bool = false
 @export var walk_in : bool = false
+@export var attack_unlocked : bool = false
+@export var attack_locked : bool = false
 
 var has_been_interacted = false
 
 func interact():
-	if unlock_sprint or lock_sprint:
+	if unlock_sprint or lock_sprint or attack_unlocked or attack_locked :
 		Dialogic.timeline_ended.connect(_on_dialogue_finished, CONNECT_ONE_SHOT)
 
 	if not has_been_interacted:
@@ -27,3 +29,7 @@ func _on_dialogue_finished():
 		Gamemanager.sprint_unlocked = true
 	elif lock_sprint:
 		Gamemanager.sprint_unlocked = false
+	if attack_unlocked:
+		Gamemanager.attack_unlocked = true
+	if attack_locked:
+		Gamemanager.attack_unlocked = false
